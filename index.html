@@ -280,9 +280,36 @@
         }
       }
 
+      @keyframes typingFade {
+        0%, 100% { opacity: 0.82; }
+        50% { opacity: 1; }
+      }
+
       @keyframes blinkCursor {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
+      }
+
+      /* Premium Suggested Animations */
+      @keyframes floatHero {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      @keyframes slowOrbMove {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(25px, -35px) scale(1.06); }
+        66% { transform: translate(-20px, 20px) scale(0.94); }
+      }
+
+      @keyframes particleDrift {
+        0%, 100% { transform: translate(0px, 0px); opacity: 0.35; }
+        50% { transform: translate(15px, -20px); opacity: 0.7; }
+      }
+
+      @keyframes orbitRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
       }
 
       .hero-title-line {
@@ -305,6 +332,39 @@
 
       .animate-blink {
         animation: blinkCursor 0.8s infinite;
+      }
+
+      /* Custom Premium Animation Classes */
+      .animate-float-hero {
+        animation: floatHero 6s ease-in-out infinite;
+      }
+
+      .animate-slow-orb-1 {
+        animation: slowOrbMove 22s ease-in-out infinite;
+      }
+
+      .animate-slow-orb-2 {
+        animation: slowOrbMove 28s ease-in-out infinite reverse;
+      }
+
+      .animate-particle-drift-1 {
+        animation: particleDrift 12s ease-in-out infinite;
+      }
+
+      .animate-particle-drift-2 {
+        animation: particleDrift 16s ease-in-out infinite 1.5s;
+      }
+
+      .animate-orbit-rotate-clockwise {
+        animation: orbitRotate 32s linear infinite;
+      }
+
+      .animate-orbit-rotate-counter {
+        animation: orbitRotate 24s linear infinite reverse;
+      }
+
+      .animate-typing-fade {
+        animation: typingFade 2.5s ease-in-out infinite;
       }
 
       /* Staggered Mobile Menu Entrance Animations */
@@ -341,6 +401,18 @@
         .animate-fade-slide-text,
         .animate-blink,
         #typing-cursor,
+        .animate-float-hero,
+        .animate-slow-orb-1,
+        .animate-slow-orb-2,
+        .animate-particle-drift-1,
+        .animate-particle-drift-2,
+        .animate-orbit-rotate-clockwise,
+        .animate-orbit-rotate-counter,
+        .animate-typing-fade,
+        .animate-float-1,
+        .animate-float-2,
+        .animate-float-3,
+        .animate-float-4,
         img,
         a,
         div {
@@ -365,9 +437,14 @@
   </head>
   <body class="cad-bg text-[#dfe1f6] font-sans antialiased selection:bg-[#22D3EE]/30 overflow-x-hidden min-h-screen">
     
-    <!-- Background Ethereal Glow Blobs -->
-    <div class="fixed top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#7C3AED]/8 rounded-full filter blur-[120px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-[#22D3EE]/6 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
+    <!-- Background Ethereal Glow Blobs & Floating Orbs -->
+    <div class="fixed top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#7C3AED]/8 rounded-full filter blur-[120px] pointer-events-none z-0 animate-slow-orb-1"></div>
+    <div class="fixed bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-[#22D3EE]/6 rounded-full filter blur-[150px] pointer-events-none z-0 animate-slow-orb-2"></div>
+    
+    <!-- Floating soft cyan/purple orbs -->
+    <div class="fixed top-[25%] left-[8%] w-16 h-16 bg-[#22D3EE]/4 rounded-full filter blur-xl pointer-events-none z-0 animate-slow-orb-2" style="animation-duration: 35s;"></div>
+    <div class="fixed top-[55%] right-[15%] w-24 h-24 bg-[#7C3AED]/4 rounded-full filter blur-2xl pointer-events-none z-0 animate-slow-orb-1" style="animation-duration: 40s;"></div>
+    <div class="fixed bottom-[15%] left-[20%] w-20 h-20 bg-[#22D3EE]/3 rounded-full filter blur-xl pointer-events-none z-0 animate-slow-orb-1" style="animation-duration: 45s;"></div>
 
     <!-- HEADER / NAVIGATION -->
     <header class="fixed top-0 left-0 w-full z-50 border-b border-white/5 backdrop-blur-md bg-midnight/70 h-20 flex items-center" id="main-header">
@@ -407,7 +484,7 @@
       </div>
 
       <!-- Mobile Full-Screen Overlay Menu -->
-      <div id="mobile-menu" class="fixed inset-0 w-full h-[100dvh] bg-[#050816]/96 backdrop-blur-2xl flex-col items-center justify-center gap-8 z-[9999] hidden opacity-0 transition-all duration-300 transform translate-y-4">
+      <div id="mobile-menu" class="fixed inset-0 w-full h-[100dvh] bg-[#050816]/98 backdrop-blur-3xl flex-col items-center justify-between py-12 px-6 z-[9999] hidden opacity-0 transition-all duration-300 transform translate-y-4 overflow-y-auto pointer-events-none lg:hidden">
         <!-- Close Button inside the overlay -->
         <button class="absolute top-6 right-6 flex items-center justify-center w-12 h-12 rounded-full border border-white/10 hover:bg-white/5 bg-transparent transition-all text-white z-[10000]" id="mobile-menu-close" aria-label="Close navigation">
           <i data-lucide="x" class="w-6 h-6"></i>
@@ -417,19 +494,48 @@
         <div class="absolute top-[-10%] left-[-20%] w-[300px] h-[300px] bg-[#7C3AED]/15 rounded-full filter blur-[80px] pointer-events-none"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[350px] h-[350px] bg-[#22D3EE]/10 rounded-full filter blur-[100px] pointer-events-none"></div>
         
-        <nav class="flex flex-col items-center gap-5 text-center relative z-10">
-          <a href="#hero" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Hero</a>
-          <a href="#learning" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Learning</a>
-          <a href="#experience" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Experience</a>
-          <a href="#skills" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Skills</a>
-          <a href="#services" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Services</a>
-          <a href="#projects" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Projects</a>
-          <a href="#career" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Career</a>
-          <a href="#contact" class="mobile-nav-item py-1 text-2xl font-display font-black text-[#dfe1f6] hover:text-[#22D3EE] transition-all tracking-wide">Contact</a>
+        <!-- Header spacer / small tag -->
+        <div class="text-[10px] font-mono tracking-[0.3em] text-[#22D3EE]/60 uppercase text-center mt-4 select-none">
+          Ishtiak Ahamed // Portfolio Menu
+        </div>
+
+        <nav class="flex flex-col items-center gap-4 text-center relative z-10 w-full max-w-xs my-auto py-6">
+          <a href="#hero" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">01 //</span>
+            Hero
+          </a>
+          <a href="#learning" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">02 //</span>
+            Learning
+          </a>
+          <a href="#experience" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">03 //</span>
+            Experience
+          </a>
+          <a href="#skills" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">04 //</span>
+            Skills
+          </a>
+          <a href="#services" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">05 //</span>
+            Services
+          </a>
+          <a href="#projects" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">06 //</span>
+            Projects
+          </a>
+          <a href="#career" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">07 //</span>
+            Career
+          </a>
+          <a href="#contact" class="mobile-nav-item py-1.5 text-base sm:text-lg font-mono tracking-widest uppercase text-lightGray hover:text-[#22D3EE] transition-all flex items-center gap-3 group w-full justify-center">
+            <span class="text-[10px] text-cyan-400/40 group-hover:text-cyan-400 transition-colors">08 //</span>
+            Contact
+          </a>
         </nav>
         
-        <div class="mt-2 w-full px-8 max-w-xs relative z-10">
-          <a href="#contact" class="mobile-nav-item block w-full py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-display font-bold tracking-wider text-sm uppercase text-center shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all">
+        <div class="w-full px-8 max-w-xs relative z-10 mb-4">
+          <a href="#contact" class="mobile-nav-item block w-full py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-display font-semibold tracking-wider text-xs uppercase text-center shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all">
             Hire Me
           </a>
         </div>
@@ -457,22 +563,28 @@
 
             <!-- Header Typography -->
             <h1 class="font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2 md:mb-3">
-              <span class="hero-title-line delay-line-1">Web3 Community Manager</span><br />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold animate-gradient-shine hero-title-line delay-line-2 py-0.5">& AutoCAD Civil</span><br />
-              <span class="hero-title-line delay-line-3">Drafting Assistant</span>
+              <span class="hero-title-line delay-line-1 select-text">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-[#22D3EE] to-violet-400 font-extrabold animate-gradient-shine py-0.5">Multi-Skilled</span><br />
+                Remote Professional
+              </span>
             </h1>
 
+            <!-- Supporting line under headline -->
+            <p class="text-[13px] sm:text-base font-display font-semibold text-[#22D3EE]/95 tracking-wide mt-1.5 mb-2.5 hero-animate delay-2 select-text uppercase">
+              Community Manager &bull; AutoCAD Civil Drafting Assistant &bull; Web3 Project Support
+            </p>
+
             <!-- Dynamic Rotating Subtitle -->
-            <div class="flex items-center flex-wrap gap-1.5 font-mono text-xs sm:text-sm text-lightGray/95 pl-0.5 min-h-[1.5rem] select-none hero-animate delay-3">
-              <span class="text-zinc-500 font-semibold uppercase tracking-wider">I work as a</span>
+            <div class="flex items-center flex-wrap gap-1.5 font-mono text-xs sm:text-sm text-lightGray/95 pl-0.5 min-h-[1.5rem] select-none hero-animate delay-3 animate-typing-fade">
+              <span class="text-zinc-400 font-semibold uppercase tracking-widest text-[10px] sm:text-xs">I work in</span>
               <div class="font-bold relative inline-flex items-center flex-wrap">
-                <span id="rotating-text" class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 drop-shadow-[0_0_15px_rgba(124,58,237,0.15)] select-text">Web3 Community Manager</span>
-                <span id="typing-cursor" class="w-[2px] h-[1.1em] bg-cyan-400 ml-1 inline-block animate-blink"></span>
+                <span id="rotating-text" class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-[#22D3EE] to-violet-400 animate-gradient-shine drop-shadow-[0_0_15px_rgba(124,58,237,0.15)] select-text">Web3 Community Growth</span>
+                <span id="typing-cursor" class="w-[2px] h-[1.1em] bg-[#22D3EE] ml-1 inline-block animate-blink"></span>
               </div>
             </div>
 
             <!-- Hero Subtitle -->
-            <p class="font-mono text-xs tracking-wide text-[#22D3EE] font-semibold leading-relaxed uppercase pl-0.5 hero-animate delay-4">
+            <p class="font-mono text-xs tracking-wide text-[#22D3EE] font-semibold leading-relaxed uppercase pl-0.5 hero-animate delay-4 select-text">
               CMO at KedolikSwap | Core Ambassador | Diploma in Civil Engineering Student | AutoCAD 2D/3D Learner
             </p>
 
@@ -535,19 +647,14 @@
                 </a>
               </div>
               
-              <div class="flex items-stretch sm:items-center w-full sm:w-auto">
-                <a href="assets/ishtiak-cv.pdf" target="_blank" download class="btn-outline px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 select-none cursor-pointer w-full sm:w-auto" title="Download CV PDF Document">
-                  <span>Download CV</span>
-                  <span class="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center"><i data-lucide="download" class="w-3" style="height:12px; width:12px;"></i></span>
-                </a>
-              </div>
+
             </div>
 
           </div>
 
           <!-- Column 2: Blueprint Circular Avatar Widget with fine Connecting Lines -->
           <div class="lg:col-span-5 flex justify-center items-center relative py-6 hero-animate delay-7">
-            <div class="relative w-[340px] sm:w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center">
+            <div class="animate-float-hero relative w-[340px] sm:w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center">
               
               <!-- Central Circle with Image -->
               <div class="relative w-[210px] sm:w-[240px] h-[210px] sm:h-[240px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400 shadow-glow-purple z-10 flex items-center justify-center select-none">
@@ -562,8 +669,8 @@
               </div>
 
               <!-- Orbiting Blueprint Rings -->
-              <div class="absolute w-[240px] sm:w-[270px] h-[240px] sm:h-[270px] border border-dashed border-cyan-400/25 rounded-full spin-slow pointer-events-none z-0"></div>
-              <div class="absolute w-[270px] sm:w-[310px] h-[270px] sm:h-[310px] border border-dashed border-violet-500/15 rounded-full spin-reverse pointer-events-none z-0"></div>
+              <div class="absolute w-[240px] sm:w-[270px] h-[240px] sm:h-[270px] border border-dashed border-cyan-400/25 rounded-full animate-orbit-rotate-clockwise pointer-events-none z-0"></div>
+              <div class="absolute w-[270px] sm:w-[310px] h-[270px] sm:h-[310px] border border-dashed border-violet-500/15 rounded-full animate-orbit-rotate-counter pointer-events-none z-0"></div>
               
               <!-- Radial cross coordinates vector backdrop -->
               <div class="absolute w-full h-[1px] bg-white/5 pointer-events-none"></div>
@@ -1651,6 +1758,9 @@
       // Initialize Lucide Icons
       lucide.createIcons();
 
+      // Read reduced-motion state globally
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       // Mobile Menu Trigger Logic
       const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
       const mobileDropdownMenu = document.getElementById('mobile-menu');
@@ -1659,8 +1769,8 @@
 
       const openMobileMenu = () => {
         if (!mobileDropdownMenu) return;
-        mobileDropdownMenu.classList.remove('hidden');
-        mobileDropdownMenu.classList.add('flex');
+        mobileDropdownMenu.classList.remove('hidden', 'pointer-events-none');
+        mobileDropdownMenu.classList.add('flex', 'pointer-events-auto');
         // Force reflow for transitioning
         mobileDropdownMenu.offsetHeight;
         mobileDropdownMenu.classList.remove('opacity-0', 'translate-y-4');
@@ -1676,6 +1786,8 @@
         if (!mobileDropdownMenu) return;
         mobileDropdownMenu.classList.add('opacity-0', 'translate-y-4');
         mobileDropdownMenu.classList.remove('mobile-menu-open');
+        mobileDropdownMenu.classList.add('pointer-events-none');
+        mobileDropdownMenu.classList.remove('pointer-events-auto');
         document.body.classList.remove('overflow-hidden');
         if (menuIconState) {
           menuIconState.setAttribute('data-lucide', 'menu');
@@ -1724,8 +1836,8 @@
 
         window.addEventListener('resize', () => {
           if (window.innerWidth >= 1024) {
-            mobileDropdownMenu.classList.add('hidden');
-            mobileDropdownMenu.classList.remove('flex', 'mobile-menu-open');
+            mobileDropdownMenu.classList.add('hidden', 'pointer-events-none');
+            mobileDropdownMenu.classList.remove('flex', 'mobile-menu-open', 'pointer-events-auto');
             mobileDropdownMenu.classList.add('opacity-0', 'translate-y-4');
             document.body.classList.remove('overflow-hidden');
             if (menuIconState) {
@@ -1855,6 +1967,20 @@
         function frameRenderer() {
           drawCtx.clearRect(0, 0, canvasW, canvasH);
           
+          if (prefersReducedMotion) {
+            // Render basic static particles for reduced motion design
+            for (let pIdx = 0; pIdx < Math.min(activeParticles.length, 12); pIdx++) {
+              const nodeParticle = activeParticles[pIdx];
+              drawCtx.beginPath();
+              drawCtx.arc(nodeParticle.coordinateX, nodeParticle.coordinateY, nodeParticle.nodeRadius * 1.5, 0, Math.PI * 2);
+              drawCtx.fillStyle = nodeParticle.nodeColor;
+              drawCtx.globalAlpha = 0.28;
+              drawCtx.fill();
+            }
+            drawCtx.globalAlpha = 1.0;
+            return; // Exit and do not register requestAnimationFrame
+          }
+          
           for (let pIdx = 0; pIdx < particleIntensityCount; pIdx++) {
             const nodeParticle = activeParticles[pIdx];
             
@@ -1941,9 +2067,6 @@
       }
 
       // --- SCROLL REVEAL & STATS COUNTER ACTION LABS ---
-
-      // Read reduced-motion state
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // 1. Scroll Reveal Observer
       const revealCallback = (entries, observer) => {
@@ -2055,11 +2178,11 @@
       const rotatingTextElement = document.getElementById('rotating-text');
       const typingCursorElement = document.getElementById('typing-cursor');
       const rotatingPhrases = [
-        "Web3 Community Manager",
-        "AutoCAD Civil Drafting Assistant",
-        "CMO at KedolikSwap",
-        "Core Ambassador",
-        "Civil Engineering Student"
+        "Web3 Community Growth",
+        "AutoCAD Civil Drafting",
+        "Remote Project Support",
+        "Crypto Community Management",
+        "Civil Engineering Learning"
       ];
       
       let phraseIdx = 0;
