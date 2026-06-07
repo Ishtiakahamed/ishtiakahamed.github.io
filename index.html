@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- Google Analytics 4 Visitor Tracking -->
+    <!-- Replace G-XXXXXXXXXX with your real GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -161,6 +172,55 @@
       .active-nav-link {
         color: #22D3EE !important;
         text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+      }
+
+      /* Scroll Reveal Classes */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform, opacity;
+      }
+      .reveal-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-on-scroll.visible-instantly {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      /* Slow Pulsing keyframe for badge icons */
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+      .animate-pulse-slow {
+        animation: pulse-slow 3s ease-in-out infinite;
+      }
+
+      /* Native reduced motion compliance */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll,
+        .glass-card,
+        .btn-gradient,
+        .btn-outline,
+        .spin-slow,
+        .spin-reverse,
+        .animate-pulse-slow,
+        img,
+        a,
+        div {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+        }
+        .reveal-on-scroll {
+          opacity: 1 !important;
+        }
       }
     </style>
   </head>
@@ -414,7 +474,7 @@
       <section id="learning" class="py-24 relative border-t border-white/5 bg-midnight/20">
         <div class="absolute left-6 md:left-24 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
@@ -571,7 +631,7 @@
 
       <!-- SECTION 3: WEB3 WORK EXPERIENCE -->
       <section id="experience" class="py-24 relative border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Header Area -->
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 gap-6">
@@ -702,7 +762,7 @@
 
       <!-- SECTION 3.5: REMOTE WORK EXPERIENCE & STATS -->
       <section id="remote-stats" class="py-24 relative border-t border-white/5 bg-[#080d19]/25">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Header Area -->
           <div class="max-w-3xl mb-16">
@@ -723,21 +783,21 @@
             <!-- Left Side: Circular Stats and Pill (8 columns on desktop) -->
             <div class="lg:col-span-8 flex flex-col gap-8 justify-between">
               
-              <!-- Circular KPI Grid: 4 items (Stacks beautifully to 2 columns on mobile, 4 columns on large screens) -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+              <!-- Circular KPI Grid: 4 items (Stacks beautifully to 1 or 2 columns on mobile, 4 columns on large screens) -->
+              <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                 
                 <!-- Circular Stat 1 -->
                 <div class="relative group flex flex-col items-center">
                   <!-- Outer glowing gradient ring -->
                   <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-violet-600 to-fuchsia-500 opacity-20 blur-md group-hover:opacity-35 transition-opacity duration-500"></div>
                   <!-- Outer border circle -->
-                  <div class="relative aspect-square w-full max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.25)]">
+                  <div class="relative aspect-square w-full max-w-[150px] xs:max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.25)]">
                     <div class="absolute inset-[3px] rounded-full border border-white/5 pointer-events-none"></div>
                     <div class="w-full h-full rounded-full bg-slateBg/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 border border-white/5 relative">
-                      <div class="w-8 h-8 rounded-full bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-2">
+                      <div class="w-8 h-8 rounded-full bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 mb-2 animate-pulse-slow">
                         <i data-lucide="award" class="w-4 h-4"></i>
                       </div>
-                      <span class="text-lg sm:text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-300 text-center leading-tight">2.5+ Years</span>
+                      <span class="stat-counter text-lg sm:text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-300 text-center leading-tight" data-target="2.5" data-suffix="+ Years">2.5+ Years</span>
                       <span class="text-[9px] font-mono text-zinc-400 mt-2 uppercase tracking-wider text-center">Remote Web3 Work</span>
                     </div>
                   </div>
@@ -748,13 +808,13 @@
                   <!-- Outer glowing gradient ring -->
                   <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500 to-teal-400 opacity-20 blur-md group-hover:opacity-35 transition-opacity duration-500"></div>
                   <!-- Outer border circle -->
-                  <div class="relative aspect-square w-full max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+                  <div class="relative aspect-square w-full max-w-[150px] xs:max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-teal-400 to-emerald-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]">
                     <div class="absolute inset-[3px] rounded-full border border-white/5 pointer-events-none"></div>
                     <div class="w-full h-full rounded-full bg-slateBg/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 border border-white/5 relative">
-                      <div class="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-2">
+                      <div class="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-2 animate-pulse-slow">
                         <i data-lucide="clock" class="w-4 h-4"></i>
                       </div>
-                      <span class="text-lg sm:text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 text-center leading-tight">2,000+ Hours</span>
+                      <span class="stat-counter text-lg sm:text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300 text-center leading-tight" data-target="2000" data-suffix="+ Hours" data-comma="true">2,000+ Hours</span>
                       <span class="text-[9px] font-mono text-cyan-200 mt-2 uppercase tracking-wider text-center">Estimated Work Time</span>
                     </div>
                   </div>
@@ -765,13 +825,13 @@
                   <!-- Outer glowing gradient ring -->
                   <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#7C3AED] to-cyan-400 opacity-20 blur-md group-hover:opacity-35 transition-opacity duration-500"></div>
                   <!-- Outer border circle -->
-                  <div class="relative aspect-square w-full max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-[#7C3AED] via-fuchsia-500 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.25)]">
+                  <div class="relative aspect-square w-full max-w-[150px] xs:max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-[#7C3AED] via-fuchsia-500 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.25)]">
                     <div class="absolute inset-[3px] rounded-full border border-white/5 pointer-events-none"></div>
                     <div class="w-full h-full rounded-full bg-slateBg/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 border border-white/5 relative">
-                      <div class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-1">
+                      <div class="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-1 animate-pulse-slow">
                         <i data-lucide="wallet" class="w-4 h-4"></i>
                       </div>
-                      <span class="text-[13px] sm:text-sm font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-200 text-center leading-none">≈ 2,856 USDT</span>
+                      <span class="stat-counter text-[13px] sm:text-sm font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-200 text-center leading-none" data-prefix="≈ " data-target="2856" data-suffix=" USDT" data-comma="true">≈ 2,856 USDT</span>
                       <span class="text-[9px] font-mono text-violet-300 mt-2 uppercase tracking-wider text-center">Estimated Project Value</span>
                     </div>
                   </div>
@@ -782,13 +842,13 @@
                   <!-- Outer glowing gradient ring -->
                   <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 opacity-20 blur-md group-hover:opacity-35 transition-opacity duration-500"></div>
                   <!-- Outer border circle -->
-                  <div class="relative aspect-square w-full max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+                  <div class="relative aspect-square w-full max-w-[150px] xs:max-w-[170px] sm:max-w-[190px] rounded-full p-[2px] bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400/40 flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]">
                     <div class="absolute inset-[3px] rounded-full border border-white/5 pointer-events-none"></div>
                     <div class="w-full h-full rounded-full bg-slateBg/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 border border-white/5 relative">
-                      <div class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-1">
+                      <div class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-1 animate-pulse-slow">
                         <i data-lucide="banknote" class="w-4 h-4"></i>
                       </div>
-                      <span class="text-[13px] sm:text-sm font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300 text-center leading-none">≈ ৳334,152 BDT</span>
+                      <span class="stat-counter text-[13px] sm:text-sm font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300 text-center leading-none" data-prefix="≈ ৳" data-target="334152" data-suffix=" BDT" data-comma="true">≈ ৳334,152 BDT</span>
                       <span class="text-[9px] font-mono text-emerald-200 mt-2 uppercase tracking-wider text-center">Approx. BDT Value</span>
                     </div>
                   </div>
@@ -863,7 +923,7 @@
 
       <!-- SECTION 4: SKILLS SECTION -->
       <section id="skills" class="py-24 relative border-t border-white/5 bg-[#080d19]/30">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
@@ -982,7 +1042,7 @@
 
       <!-- SECTION 5: SERVICES SECTION -->
       <section id="services" class="py-24 relative border-t border-white/5 bg-midnight/20">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
@@ -1082,7 +1142,7 @@
 
       <!-- SECTION 6: PROJECTS / PORTFOLIO SECTION -->
       <section id="projects" class="py-24 relative border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
@@ -1191,7 +1251,7 @@
           </svg>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <div class="max-w-3xl mb-12">
             <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
@@ -1234,7 +1294,7 @@
 
       <!-- SECTION 8: CONTACT & LET'S WORK TOGETHER -->
       <section id="contact" class="py-24 relative border-t border-white/5 bg-midnight/10">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
             
@@ -1653,6 +1713,117 @@
           }
         });
       }
+
+      // --- SCROLL REVEAL & STATS COUNTER ACTION LABS ---
+
+      // Read reduced-motion state
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 1. Scroll Reveal Observer
+      const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Reveal only once
+          }
+        });
+      };
+
+      const revealObserverOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const revealObserver = new IntersectionObserver(revealCallback, revealObserverOptions);
+      
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      revealElements.forEach(element => {
+        if (prefersReducedMotion) {
+          element.classList.add('visible-instantly');
+        } else {
+          revealObserver.observe(element);
+        }
+      });
+
+      // 2. Stat Counter Observer Engine
+      const counterTargetElements = document.querySelectorAll('.stat-counter');
+      
+      const animateCounter = (element) => {
+        const targetValue = parseFloat(element.getAttribute('data-target'));
+        const prefix = element.getAttribute('data-prefix') || '';
+        const suffix = element.getAttribute('data-suffix') || '';
+        const hasComma = element.getAttribute('data-comma') === 'true';
+        const duration = prefersReducedMotion ? 100 : 1500; // Fast or instant under reduced motion
+        const startTimestamp = performance.now();
+
+        const countStep = (currentTimestamp) => {
+          const elapsed = currentTimestamp - startTimestamp;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out quad formula
+          const easedProgress = progress * (2 - progress);
+          const currentValue = easedProgress * targetValue;
+
+          let formattedValue = '';
+          if (targetValue % 1 === 0) {
+            const roundedVal = Math.floor(currentValue);
+            formattedValue = hasComma ? roundedVal.toLocaleString() : roundedVal.toString();
+          } else {
+            const fractionDigits = decimalCount(targetValue);
+            formattedValue = currentValue.toFixed(fractionDigits);
+          }
+
+          element.textContent = `${prefix}${formattedValue}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(countStep);
+          } else {
+            const finalFormatted = targetValue % 1 === 0 
+              ? (hasComma ? targetValue.toLocaleString() : targetValue.toString())
+              : targetValue.toFixed(decimalCount(targetValue));
+            element.textContent = `${prefix}${finalFormatted}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(countStep);
+      };
+
+      const decimalCount = (number) => {
+        const numStr = number.toString();
+        if (numStr.includes('.')) {
+          return numStr.split('.')[1].length;
+        }
+        return 0;
+      };
+
+      const counterObserverCallback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target); // Animates once
+          }
+        });
+      };
+
+      const counterObserver = new IntersectionObserver(counterObserverCallback, {
+        root: null,
+        threshold: 0.1
+      });
+
+      counterTargetElements.forEach(item => {
+        if (prefersReducedMotion) {
+          const targetValue = parseFloat(item.getAttribute('data-target'));
+          const prefix = item.getAttribute('data-prefix') || '';
+          const suffix = item.getAttribute('data-suffix') || '';
+          const hasComma = item.getAttribute('data-comma') === 'true';
+          const finalFormatted = targetValue % 1 === 0 
+            ? (hasComma ? targetValue.toLocaleString() : targetValue.toString())
+            : targetValue.toFixed(decimalCount(targetValue));
+          item.textContent = `${prefix}${finalFormatted}${suffix}`;
+        } else {
+          counterObserver.observe(item);
+        }
+      });
     </script>
   </body>
 </html>
