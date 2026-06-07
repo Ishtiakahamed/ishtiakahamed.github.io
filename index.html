@@ -245,6 +245,84 @@
       .delay-6 { animation-delay: 680ms; }
       .delay-7 { animation-delay: 800ms; }
 
+      /* Premium Typography Animations */
+      @keyframes heroTitleReveal {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+          letter-spacing: -0.05em;
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+          letter-spacing: -0.025em; /* standard tracking-tight */
+        }
+      }
+
+      @keyframes gradientShine {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      @keyframes fadeSlideText {
+        0% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .hero-title-line {
+        display: inline-block;
+        opacity: 0;
+        animation: heroTitleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .delay-line-1 { animation-delay: 100ms; }
+      .delay-line-2 { animation-delay: 240ms; }
+      .delay-line-3 { animation-delay: 380ms; }
+
+      .animate-gradient-shine {
+        background-size: 200% auto;
+        animation: gradientShine 5s ease infinite;
+      }
+
+      .animate-fade-slide-text {
+        animation: fadeSlideText 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .animate-blink {
+        animation: blinkCursor 0.8s infinite;
+      }
+
+      /* Staggered Mobile Menu Entrance Animations */
+      #mobile-menu .mobile-nav-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #mobile-menu.mobile-menu-open .mobile-nav-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #mobile-menu.mobile-menu-open nav a:nth-child(1) { transition-delay: 150ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(2) { transition-delay: 200ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(3) { transition-delay: 250ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(4) { transition-delay: 300ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(5) { transition-delay: 350ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(6) { transition-delay: 400ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(7) { transition-delay: 450ms; }
+      #mobile-menu.mobile-menu-open nav a:nth-child(8) { transition-delay: 500ms; }
+      #mobile-menu.mobile-menu-open div a.mobile-nav-item { transition-delay: 550ms; }
+
       /* Native reduced motion compliance */
       @media (prefers-reduced-motion: reduce) {
         .reveal-on-scroll,
@@ -254,6 +332,11 @@
         .spin-slow,
         .spin-reverse,
         .animate-pulse-slow,
+        .hero-title-line,
+        .animate-gradient-shine,
+        .animate-fade-slide-text,
+        .animate-blink,
+        #typing-cursor,
         img,
         a,
         div {
@@ -262,6 +345,13 @@
           transform: none !important;
           backdrop-filter: none !important;
           -webkit-backdrop-filter: none !important;
+          letter-spacing: normal !important;
+        }
+        .hero-title-line {
+          opacity: 1 !important;
+        }
+        #typing-cursor {
+          display: none !important;
         }
         .reveal-on-scroll {
           opacity: 1 !important;
@@ -362,24 +452,33 @@
             </div>
 
             <!-- Header Typography -->
-            <h1 class="font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2 hero-animate delay-2">
-              Web3 Community Manager<br />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold">& AutoCAD Civil</span><br />
-              Drafting Assistant
+            <h1 class="font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2 md:mb-3">
+              <span class="hero-title-line delay-line-1">Web3 Community Manager</span><br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold animate-gradient-shine hero-title-line delay-line-2 py-0.5">& AutoCAD Civil</span><br />
+              <span class="hero-title-line delay-line-3">Drafting Assistant</span>
             </h1>
 
+            <!-- Dynamic Rotating Subtitle -->
+            <div class="flex items-center flex-wrap gap-1.5 font-mono text-xs sm:text-sm text-lightGray/95 pl-0.5 min-h-[1.5rem] select-none hero-animate delay-3">
+              <span class="text-zinc-500 font-semibold uppercase tracking-wider">I work as a</span>
+              <div class="font-bold relative inline-flex items-center flex-wrap">
+                <span id="rotating-text" class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 drop-shadow-[0_0_15px_rgba(124,58,237,0.15)] select-text">Web3 Community Manager</span>
+                <span id="typing-cursor" class="w-[2px] h-[1.1em] bg-cyan-400 ml-1 inline-block animate-blink"></span>
+              </div>
+            </div>
+
             <!-- Hero Subtitle -->
-            <p class="font-mono text-xs tracking-wide text-[#22D3EE] font-semibold leading-relaxed uppercase pl-0.5 hero-animate delay-3">
+            <p class="font-mono text-xs tracking-wide text-[#22D3EE] font-semibold leading-relaxed uppercase pl-0.5 hero-animate delay-4">
               CMO at KedolikSwap | Core Ambassador | Diploma in Civil Engineering Student | AutoCAD 2D/3D Learner
             </p>
 
             <!-- Short descriptive story -->
-            <p class="text-sm text-lightGray max-w-xl leading-relaxed mt-2 pl-0.5 hero-animate delay-4">
+            <p class="text-sm text-lightGray max-w-xl leading-relaxed mt-2 pl-0.5 hero-animate delay-5">
               I’m building a career by combining Web3 community growth with Civil Engineering and AutoCAD drafting skills. I help blockchain projects grow communities while developing technical skills in civil drafting, floor plans, sections, elevations, and 3D modeling.
             </p>
 
             <!-- Hero Social Icons Dock -->
-            <div class="flex flex-wrap items-center gap-3 mt-4 pl-0.5 select-none hero-animate delay-5">
+            <div class="flex flex-wrap items-center gap-3 mt-4 pl-0.5 select-none hero-animate delay-6">
               <span class="text-[9px] font-mono uppercase tracking-widest text-zinc-500 mr-1.5">Social Connect:</span>
               
               <!-- Telegram -->
@@ -419,7 +518,7 @@
             </div>
 
             <!-- Modern Asymmetrical Layout of Buttons -->
-            <div class="flex flex-col gap-3 mt-6 w-full pl-0.5 hero-animate delay-6">
+            <div class="flex flex-col gap-3 mt-6 w-full pl-0.5 hero-animate delay-7">
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                 <a href="#learning" class="btn-gradient px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 shadow-glow-cyan select-none cursor-pointer">
                   <span>View My Journey</span>
@@ -1561,6 +1660,7 @@
         // Force reflow for transitioning
         mobileDropdownMenu.offsetHeight;
         mobileDropdownMenu.classList.remove('opacity-0', 'translate-y-4');
+        mobileDropdownMenu.classList.add('mobile-menu-open');
         document.body.classList.add('overflow-hidden');
         if (menuIconState) {
           menuIconState.setAttribute('data-lucide', 'x');
@@ -1571,6 +1671,7 @@
       const closeMobileMenu = () => {
         if (!mobileDropdownMenu) return;
         mobileDropdownMenu.classList.add('opacity-0', 'translate-y-4');
+        mobileDropdownMenu.classList.remove('mobile-menu-open');
         document.body.classList.remove('overflow-hidden');
         if (menuIconState) {
           menuIconState.setAttribute('data-lucide', 'menu');
@@ -1620,7 +1721,7 @@
         window.addEventListener('resize', () => {
           if (window.innerWidth >= 1024) {
             mobileDropdownMenu.classList.add('hidden');
-            mobileDropdownMenu.classList.remove('flex');
+            mobileDropdownMenu.classList.remove('flex', 'mobile-menu-open');
             mobileDropdownMenu.classList.add('opacity-0', 'translate-y-4');
             document.body.classList.remove('overflow-hidden');
             if (menuIconState) {
@@ -1692,7 +1793,7 @@
           }
         });
 
-        // Tracks mouse coordinates within the Hero section
+        // Tracks mouse & touch coordinates within the Hero section
         const mousePointer = { x: null, y: null, active: false };
         const heroSection = document.getElementById('hero');
         if (heroSection) {
@@ -1708,6 +1809,29 @@
           heroSection.addEventListener('mouseenter', () => {
             mousePointer.active = true;
           });
+
+          // Touch events for mobile interactive constellation
+          heroSection.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length > 0) {
+              const boundaryRect = backgroundCanvas.getBoundingClientRect();
+              mousePointer.x = e.touches[0].clientX - boundaryRect.left;
+              mousePointer.y = e.touches[0].clientY - boundaryRect.top;
+              mousePointer.active = true;
+            }
+          }, { passive: true });
+
+          heroSection.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches.length > 0) {
+              const boundaryRect = backgroundCanvas.getBoundingClientRect();
+              mousePointer.x = e.touches[0].clientX - boundaryRect.left;
+              mousePointer.y = e.touches[0].clientY - boundaryRect.top;
+              mousePointer.active = true;
+            }
+          }, { passive: true });
+
+          heroSection.addEventListener('touchend', () => {
+            mousePointer.active = false;
+          }, { passive: true });
         }
 
         const activeParticles = [];
@@ -1922,6 +2046,70 @@
           counterObserver.observe(item);
         }
       });
+
+      // 3. Premium Rotating/Typing Subtitle Engine
+      const rotatingTextElement = document.getElementById('rotating-text');
+      const typingCursorElement = document.getElementById('typing-cursor');
+      const rotatingPhrases = [
+        "Web3 Community Manager",
+        "AutoCAD Civil Drafting Assistant",
+        "CMO at KedolikSwap",
+        "Core Ambassador",
+        "Civil Engineering Student"
+      ];
+      
+      let phraseIdx = 0;
+      let charIdx = rotatingPhrases[phraseIdx].length;
+      let isDeleting = false;
+      const typingSpeed = 65; // Speed for typing in ms
+      let rotationTimeout = null;
+
+      function runTypewriterRotation() {
+        if (!rotatingTextElement) return;
+        const currentFullPhrase = rotatingPhrases[phraseIdx];
+        
+        if (prefersReducedMotion) {
+          if (typingCursorElement) {
+            typingCursorElement.style.display = 'none';
+          }
+          rotatingTextElement.textContent = currentFullPhrase;
+          phraseIdx = (phraseIdx + 1) % rotatingPhrases.length;
+          rotationTimeout = setTimeout(runTypewriterRotation, 2500);
+          return;
+        }
+
+        if (!isDeleting) {
+          // Incrementally type the text
+          rotatingTextElement.textContent = currentFullPhrase.substring(0, charIdx + 1);
+          charIdx++;
+
+          if (charIdx === currentFullPhrase.length) {
+            // Pause at the fully typed phrase for exactly 2.5 seconds
+            isDeleting = true;
+            rotationTimeout = setTimeout(runTypewriterRotation, 2500);
+          } else {
+            rotationTimeout = setTimeout(runTypewriterRotation, typingSpeed);
+          }
+        } else {
+          // Incrementally backspace the text
+          rotatingTextElement.textContent = currentFullPhrase.substring(0, charIdx - 1);
+          charIdx--;
+
+          if (charIdx === 0) {
+            isDeleting = false;
+            phraseIdx = (phraseIdx + 1) % rotatingPhrases.length;
+            // Short dwell pause before typing the next phrase
+            rotationTimeout = setTimeout(runTypewriterRotation, 400);
+          } else {
+            rotationTimeout = setTimeout(runTypewriterRotation, typingSpeed * 0.5); // Delete faster for dynamic feel
+          }
+        }
+      }
+
+      if (rotatingTextElement) {
+        // Start typing loop after the introductory load delays fade out
+        setTimeout(runTypewriterRotation, 1200);
+      }
     </script>
   </body>
 </html>
