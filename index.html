@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Metadata -->
+    <title>Ishtiak Ahamed | Web3 Community Manager & AutoCAD Civil Drafting Assistant</title>
+    <meta name="description" content="Ishtiak Ahamed is a Web3 Community Manager, CMO at KedolikSwap, Core Ambassador, Diploma in Civil Engineering student at Dhaka Polytechnic Institute, and AutoCAD 2D/3D learner from Bangladesh." />
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Ishtiak Ahamed | Web3 Community Manager & AutoCAD Civil Drafting Assistant" />
+    <meta property="og:description" content="Ishtiak Ahamed is a Web3 Community Manager, CMO at KedolikSwap, Core Ambassador, Diploma in Civil Engineering student at Dhaka Polytechnic Institute, and AutoCAD 2D/3D learner from Bangladesh." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ishtiakahamed.info" />
+    <meta property="og:image" content="assets/ishtiak-profile.jpg" />
+    <meta property="og:image:alt" content="Ishtiak Ahamed profile photo" />
+
+    <!-- Twitter Card SEO -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ishtiak Ahamed | Web3 Community Manager & AutoCAD Civil Drafting Assistant" />
+    <meta name="twitter:description" content="Ishtiak Ahamed is a Web3 Community Manager, CMO at KedolikSwap, Core Ambassador, Diploma in Civil Engineering student at Dhaka Polytechnic Institute, and AutoCAD 2D/3D learner from Bangladesh." />
+    <meta name="twitter:image" content="assets/ishtiak-profile.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['Space Mono', 'monospace'],
+            },
+            colors: {
+              midnight: '#05070f',
+              slateBg: '#0f1321',
+              lightGray: '#94A3B8',
+              activeText: '#F8FAFC',
+              neonPurple: '#7C3AED',
+              neonCyan: '#22D3EE',
+              glassBg: 'rgba(11, 15, 28, 0.75)',
+              glassBorder: 'rgba(255, 255, 255, 0.07)',
+            },
+            boxShadow: {
+              'glow-purple': '0 0 20px rgba(124, 58, 237, 0.25)',
+              'glow-cyan': '0 0 20px rgba(34, 211, 238, 0.25)',
+              'glass-hover': '0 12px 30px rgba(0, 0, 0, 0.4)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lucide Icons Custom Styling and CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Structuralist CSS styles -->
+    <style type="text/css">
+      /* CAD Grid Patterns */
+      .cad-bg {
+        background-color: #05070f;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+        background-size: 30px 30px;
+        position: relative;
+      }
+      
+      .cad-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.004) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+        background-size: 6px 6px;
+        pointer-events: none;
+      }
+
+      /* Custom Selection and Scrollbar */
+      ::selection {
+        background-color: rgba(34, 211, 238, 0.3);
+        color: #F8FAFC;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #05070f;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #22D3EE;
+      }
+
+      /* Glassmorphism glass effect */
+      .glass-card {
+        background: rgba(11, 15, 28, 0.7);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .glass-card:hover {
+        border-color: rgba(34, 211, 238, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(34, 211, 238, 0.1);
+      }
+
+      /* Neon Gradient Accents */
+      .neon-gradient-text {
+        background: linear-gradient(135deg, #a78bfa 0%, #22D3EE 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .btn-gradient {
+        background: linear-gradient(135deg, #7C3AED 0%, #0284c7 100%);
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-gradient:hover {
+        box-shadow: 0 6px 22px rgba(124, 58, 237, 0.45), 0 0 12px rgba(34, 211, 238, 0.25);
+        transform: translateY(-1.5px);
+      }
+
+      .btn-outline {
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255, 255, 255, 0.02);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-1.5px);
+      }
+
+      /* Circular rotation for blueprint radar graphic */
+      @keyframes slow-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .spin-slow {
+        animation: slow-spin 35s linear infinite;
+      }
+      .spin-reverse {
+        animation: slow-spin 25s linear infinite reverse;
+      }
+      
+      /* Active menu links styling */
+      .active-nav-link {
+        color: #22D3EE !important;
+        text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+      }
+    </style>
+  </head>
+  <body class="cad-bg text-[#dfe1f6] font-sans antialiased selection:bg-[#22D3EE]/30 overflow-x-hidden min-h-screen">
+    
+    <!-- Background Ethereal Glow Blobs -->
+    <div class="fixed top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#7C3AED]/8 rounded-full filter blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-[#22D3EE]/6 rounded-full filter blur-[150px] pointer-events-none z-0"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-white/5 backdrop-blur-md bg-midnight/70 h-20 flex items-center" id="main-header">
+      <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2 group">
+          <span class="font-display font-bold text-xl tracking-tight text-white transition-colors">
+            Ishtiak <span class="text-white font-normal text-opacity-95">Ahamed</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden lg:flex items-center gap-6">
+          <a href="#hero" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Hero</a>
+          <a href="#learning" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Learning</a>
+          <a href="#experience" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Experience</a>
+          <a href="#skills" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Skills</a>
+          <a href="#services" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Services</a>
+          <a href="#projects" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Projects</a>
+          <a href="#career" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Career</a>
+          <a href="#contact" class="nav-item text-[10px] font-mono tracking-widest uppercase text-lightGray hover:text-white transition-colors duration-300">Contact</a>
+        </nav>
+
+        <!-- CTA Header Button -->
+        <div class="hidden lg:block">
+          <a href="#contact" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 transition-colors text-white font-display font-bold tracking-wider text-[11px] uppercase shadow-sm">
+            Hire Me
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 hover:bg-white/5 bg-transparent transition-colors z-50 text-white" id="mobile-menu-toggle" aria-label="Toggle navigation">
+          <i data-lucide="menu" id="menu-icon-state" class="w-5 h-5"></i>
+        </button>
+
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-midnight/98 border-t border-white/5 backdrop-blur-xl flex-col px-6 py-8 gap-6 z-40 hidden opacity-0 transition-all duration-300 transform -translate-y-2">
+        <nav class="flex flex-col gap-4 text-xs font-mono tracking-widest uppercase">
+          <a href="#hero" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Hero</a>
+          <a href="#learning" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Learning</a>
+          <a href="#experience" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Experience</a>
+          <a href="#skills" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Skills</a>
+          <a href="#services" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Services</a>
+          <a href="#projects" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Projects</a>
+          <a href="#career" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Career</a>
+          <a href="#contact" class="mobile-nav-item py-2 text-lightGray border-b border-white/5 hover:text-[#22D3EE] transition-colors">Contact</a>
+        </nav>
+        <div class="mt-2">
+          <a href="#contact" class="w-full flex items-center justify-center py-3.5 rounded-full bg-blue-600 text-white font-display font-semibold tracking-wider text-xs uppercase text-center">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN BODY SECTIONS -->
+    <main class="relative z-10 w-full overflow-hidden pt-20">
+
+      <!-- SECTION 1: HERO SECTION -->
+      <section id="hero" class="relative min-h-[92vh] flex items-center py-12 lg:py-20">
+        <!-- Connection Canvas -->
+        <canvas id="hero-connection-canvas" class="absolute inset-0 pointer-events-none z-0 opacity-20"></canvas>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full relative z-10">
+          
+          <!-- Column 1: Info & CTAs -->
+          <div class="lg:col-span-7 flex flex-col items-start gap-4">
+            
+            <!-- Small Inline Greeting Tag -->
+            <div class="inline-flex items-center gap-2">
+              <span class="w-3 h-[1px] bg-cyan-400"></span>
+              <span class="text-[10px] font-mono tracking-widest text-lightGray uppercase font-bold">HI, I'M ISHTIAK AHAMED</span>
+            </div>
+
+            <!-- Header Typography -->
+            <h1 class="font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2">
+              Web3 Community Manager<br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold">& AutoCAD Civil</span><br />
+              Drafting Assistant
+            </h1>
+
+            <!-- Hero Subtitle -->
+            <p class="font-mono text-xs tracking-wide text-[#22D3EE] font-semibold leading-relaxed uppercase pl-0.5">
+              CMO at KedolikSwap | Core Ambassador | Diploma in Civil Engineering Student | AutoCAD 2D/3D Learner
+            </p>
+
+            <!-- Short descriptive story -->
+            <p class="text-sm text-lightGray max-w-xl leading-relaxed mt-2 pl-0.5">
+              I’m building a career by combining Web3 community growth with Civil Engineering and AutoCAD drafting skills. I help blockchain projects grow communities while developing technical skills in civil drafting, floor plans, sections, elevations, and 3D modeling.
+            </p>
+
+            <!-- Modern Asymmetrical Layout of Buttons -->
+            <div class="flex flex-col gap-3 mt-6 w-full pl-0.5">
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+                <a href="#learning" class="btn-gradient px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 shadow-glow-cyan select-none cursor-pointer">
+                  <span>View My Journey</span>
+                  <span class="w-5 h-5 rounded-full bg-white text-midnight flex items-center justify-center"><i data-lucide="arrow-down" class="w-3" style="height:12px; width:12px;"></i></span>
+                </a>
+                
+                <a href="#contact" class="btn-outline px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 select-none cursor-pointer">
+                  <span>Contact Me</span>
+                  <span class="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center"><i data-lucide="mail" class="w-3" style="height:12px; width:12px;"></i></span>
+                </a>
+              </div>
+              
+              <div class="flex items-stretch sm:items-center w-full sm:w-auto">
+                <a href="assets/ishtiak-cv.pdf" target="_blank" download class="btn-outline px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 select-none cursor-pointer w-full sm:w-auto" title="Download CV PDF Document">
+                  <span>Download CV</span>
+                  <span class="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center"><i data-lucide="download" class="w-3" style="height:12px; width:12px;"></i></span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Blueprint Circular Avatar Widget with fine Connecting Lines -->
+          <div class="lg:col-span-5 flex justify-center items-center relative py-6">
+            <div class="relative w-[340px] sm:w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center">
+              
+              <!-- Central Circle with Image -->
+              <div class="relative w-[210px] sm:w-[240px] h-[210px] sm:h-[240px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400 shadow-glow-purple z-10 flex items-center justify-center select-none">
+                <div class="w-full h-full rounded-full overflow-hidden border border-white/10 bg-slateBg">
+                  <img src="assets/ishtiak-profile.jpg" alt="Ishtiak Ahamed profile photo" referrerPolicy="no-referrer" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?fit=crop&w=500&h=500&q=80'">
+                </div>
+              </div>
+
+              <!-- Orbiting Blueprint Rings -->
+              <div class="absolute w-[240px] sm:w-[270px] h-[240px] sm:h-[270px] border border-dashed border-cyan-400/25 rounded-full spin-slow pointer-events-none z-0"></div>
+              <div class="absolute w-[270px] sm:w-[310px] h-[270px] sm:h-[310px] border border-dashed border-violet-500/15 rounded-full spin-reverse pointer-events-none z-0"></div>
+              
+              <!-- Radial cross coordinates vector backdrop -->
+              <div class="absolute w-full h-[1px] bg-white/5 pointer-events-none"></div>
+              <div class="absolute h-full w-[1px] bg-white/5 pointer-events-none"></div>
+
+              <!-- Connecting Dotted SVG Lines (Coordinate line tracks) -->
+              <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 hidden sm:block" viewBox="0 0 380 380">
+                <path d="M 100,90 L 140,120" stroke="rgba(34, 211, 238, 0.45)" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                <circle cx="140" cy="120" r="2.5" fill="#22D3EE" />
+                
+                <path d="M 285,115 L 250,135" stroke="rgba(34, 211, 238, 0.45)" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                <circle cx="250" cy="135" r="2.5" fill="#22D3EE" />
+                
+                <path d="M 280,245 L 255,225" stroke="rgba(124, 58, 237, 0.45)" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                <circle cx="255" cy="225" r="2.5" fill="#7C3AED" />
+                
+                <path d="M 120,245 L 132,230" stroke="rgba(124, 58, 237, 0.45)" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                <circle cx="132" cy="230" r="2.5" fill="#7C3AED" />
+                
+                <path d="M 190,320 L 190,270" stroke="rgba(34, 211, 238, 0.42)" stroke-width="1.2" stroke-dasharray="3 3" fill="none" />
+                <circle cx="190" cy="270" r="2.5" fill="#22D3EE" />
+              </svg>
+
+              <!-- Absolute Tag badging around Avatar -->
+              <div class="absolute top-[12%] left-[0%] z-20 shadow-lg select-none">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-midnight/90 backdrop-blur-md rounded-full border border-cyan-400/25 text-[10px] sm:text-xs font-mono text-white/90">
+                  <i data-lucide="drafting-compass" class="w-3.5 h-3.5 text-[#22D3EE]"></i>
+                  <span>AutoCAD 2D</span>
+                </div>
+              </div>
+
+              <div class="absolute top-[18%] right-[0%] z-20 shadow-lg select-none">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-midnight/90 backdrop-blur-md rounded-full border border-cyan-400/25 text-[10px] sm:text-xs font-mono text-white/90">
+                  <i data-lucide="box" class="w-3.5 h-3.5 text-[#22D3EE]"></i>
+                  <span>AutoCAD 3D</span>
+                </div>
+              </div>
+
+              <div class="absolute bottom-[35%] right-[2%] z-20 shadow-lg select-none">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-midnight/90 backdrop-blur-md rounded-full border border-[#7C3AED]/25 text-[10px] sm:text-xs font-mono text-white/90">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5 text-[#7C3AED]"></i>
+                  <span>Web3 Growth</span>
+                </div>
+              </div>
+
+              <div class="absolute bottom-[38%] left-[0%] z-20 shadow-lg select-none">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-midnight/90 backdrop-blur-md rounded-full border border-[#7C3AED]/25 text-[10px] sm:text-xs font-mono text-white/90">
+                  <i data-lucide="users" class="w-3.5 h-3.5 text-[#7C3AED]"></i>
+                  <span>Community Manager</span>
+                </div>
+              </div>
+
+              <div class="absolute bottom-[4%] left-1/2 transform -translate-x-1/2 z-20 shadow-lg select-none w-max">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-midnight/90 backdrop-blur-md rounded-full border border-cyan-400/25 text-[10px] sm:text-xs font-mono text-white/90">
+                  <i data-lucide="network" class="w-3.5 h-3.5 text-[#22D3EE]"></i>
+                  <span>Civil Engineering</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2: LEARNING JOURNEY TIMELINE -->
+      <section id="learning" class="py-24 relative border-t border-white/5 bg-midnight/20">
+        <div class="absolute left-6 md:left-24 top-0 bottom-0 w-[1px] bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- Heading -->
+          <div class="max-w-3xl mb-16">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+              My <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Learning Journey</span>
+            </h2>
+            <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-3">
+              Building a strong technical foundation in Civil Engineering, AutoCAD, and practical drafting skills.
+            </p>
+            <p class="text-xs text-lightGray max-w-3xl leading-relaxed">
+              I am currently studying Diploma in Civil Engineering at Dhaka Polytechnic Institute, expected to complete in 2028. Alongside my diploma, I am learning AutoCAD 2D and 3D to build skills in floor plan drafting, section and elevation drawing, civil layout preparation, basic 3D modeling, and project documentation. Before this, I completed SSC Technical/Vocational under the BTEB curriculum in General Electrical Works with a 1st Class result.
+            </p>
+          </div>
+
+          <!-- Chronology vertical stacks -->
+          <div class="max-w-4xl flex flex-col gap-8 relative pl-4 sm:pl-10">
+            <!-- Absolute vertical track line -->
+            <div class="absolute left-[3px] sm:left-[11px] top-4 bottom-4 w-[1.5px] bg-[#22D3EE]/32 z-0"></div>
+
+            <!-- Card 1: Diploma in Civil Engineering -->
+            <div class="relative group">
+              <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-white bg-midnight z-10"></div>
+              
+              <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
+                  <h3 class="font-display font-semibold text-white text-lg">Diploma in Civil Engineering</h3>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/10 text-lightGray px-2.5 py-1 rounded uppercase">EXPC. 2028</span>
+                </div>
+                <p class="text-[10px] font-mono text-[#22D3EE] font-bold uppercase tracking-widest pl-0.5">DHAKA POLYTECHNIC INSTITUTE</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
+                  Pursuing formal education in civil engineering principles, structural design, building physics, and construction methodology to build a solid academic foundation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: AutoCAD 2D Drafting -->
+            <div class="relative group">
+              <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-cyan-400 bg-midnight z-10"></div>
+              
+              <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
+                  <h3 class="font-display font-semibold text-white text-lg">AutoCAD 2D Drafting</h3>
+                  <span class="text-[9px] font-mono tracking-wider bg-cyan-600/10 text-cyan-300 border border-cyan-500/15 px-2.5 py-1 rounded uppercase font-bold text-center">Currently Learning</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Floor Plans</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Layers</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Dimensions</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Layout Sheets</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Sections & Elevations</span>
+                </div>
+
+                <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
+                  Mastering the fundamentals of 2D computer-aided design, focusing on precise architectural drawings, layers management, sheet layouts, and structural detailing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3: AutoCAD 3D Modeling -->
+            <div class="relative group">
+              <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-violet-500 bg-midnight z-10"></div>
+              
+              <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
+                  <h3 class="font-display font-semibold text-white text-lg">AutoCAD 3D Modeling</h3>
+                  <span class="text-[9px] font-mono tracking-wider bg-[#d2bbff]/10 text-[#d2bbff] border border-[#d2bbff]/15 px-2.5 py-1 rounded uppercase font-bold text-center">Currently Learning</span>
+                </div>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">3D House Modeling</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Walls</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Doors & Windows</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Building Visualization</span>
+                </div>
+
+                <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
+                  Expanding design capabilities by learning to construct and visualize basic 3D house models, wall structures, doors and windows placement, and rendering architectural elements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: SSC Technical / Vocational -->
+            <div class="relative group">
+              <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-white bg-midnight z-10"></div>
+              
+              <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
+                  <h3 class="font-display font-semibold text-white text-lg">SSC Technical / Vocational</h3>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/10 text-lightGray px-2.5 py-1 rounded uppercase">Completed</span>
+                </div>
+                <p class="text-[10px] font-mono text-[#7C3AED] font-bold uppercase tracking-widest pl-0.5">BTEB • SUBJECT: GENERAL ELECTRICAL WORKS • RESULT: 1ST CLASS</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
+                  Establishes critical understanding of physical systems, equipment and wiring practices under the Bangladesh Technical Education Board curriculum.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 5: Civil Drafting Career Goal -->
+            <div class="relative group">
+              <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-cyan-400 bg-midnight z-10"></div>
+              
+              <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5 border border-[#22D3EE]/20 bg-[#080d19]/80">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
+                  <h3 class="font-display font-semibold text-[#22D3EE] text-lg flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-[#22D3EE]"></i> Civil Drafting Career Goal</h3>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/10 text-cyan-300 px-2.5 py-1 rounded uppercase font-bold text-center">Remote Horizon</span>
+                </div>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">CAD Cleanup</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">PDF/Image Code to DWG</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/8 text-zinc-300 px-2.5 py-1 rounded-full uppercase">Quantity Takeoffs</span>
+                </div>
+
+                <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
+                  Preparing for remote contracts across AutoCAD drafting, architectural plan cleanups, converting PDF or hand sketches into clean DWG CAD files, and basic civil takeoff support.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chronology Flow Visual Sequence Box -->
+          <div class="mt-16 glass-card p-6 rounded-2xl max-w-4xl border border-white/5 bg-midnight/30">
+            <h4 class="font-mono text-xs tracking-wider text-[#22D3EE] font-bold uppercase mb-4 text-center sm:text-left">Learning Pipeline Tracking Block</h4>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] leading-relaxed text-zinc-300 text-center sm:text-left">
+              <div class="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-white/5 border border-white/5 w-full sm:w-auto">
+                <span class="text-violet-400 font-bold">STAGE 01</span>
+                <span>SSC Technical</span>
+                <span class="text-zinc-500 font-sans text-xs">General Electrical</span>
+              </div>
+              <i data-lucide="chevrons-right" class="w-4 h-4 text-cyan-400 shrink-0 transform rotate-90 sm:rotate-0"></i>
+              <div class="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-white/5 border border-white/5 w-full sm:w-auto">
+                <span class="text-cyan-400 font-bold">STAGE 02</span>
+                <span>Diploma student</span>
+                <span class="text-zinc-500 font-sans text-xs">Dhaka Polytechnic</span>
+              </div>
+              <i data-lucide="chevrons-right" class="w-4 h-4 text-cyan-400 shrink-0 transform rotate-90 sm:rotate-0"></i>
+              <div class="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-white/5 border border-white/5 w-full sm:w-auto">
+                <span class="text-violet-400 font-bold">STAGE 03</span>
+                <span>AutoCAD 2D/3D</span>
+                <span class="text-zinc-500 font-sans text-xs">Currently Learning</span>
+              </div>
+              <i data-lucide="chevrons-right" class="w-4 h-4 text-cyan-400 shrink-0 transform rotate-90 sm:rotate-0"></i>
+              <div class="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-[#22D3EE]/10 border border-[#22D3EE]/20 w-full sm:w-auto">
+                <span class="text-[#22D3EE] font-bold">GOAL</span>
+                <span>Remote CAD Work</span>
+                <span class="text-[#22D3EE] font-sans text-xs font-semibold">Ready to Assist</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 3: WEB3 WORK EXPERIENCE -->
+      <section id="experience" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- Header Area -->
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 gap-6">
+            <div class="max-w-3xl">
+              <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
+                My Web3 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Work Experience</span>
+              </h2>
+              <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-4">
+                Experience in crypto community building, Web3 marketing, project growth, and blockchain ecosystem support.
+              </p>
+              <p class="text-xs text-lightGray max-w-2xl leading-relaxed">
+                Alongside my Civil Engineering and AutoCAD learning journey, I have hands-on experience in Web3 community management, crypto marketing, Telegram communities, AMAs, KOL collaborations, airdrop campaigns, giveaways, and project growth activities.
+              </p>
+            </div>
+            
+            <!-- Live Active Indicator -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-cyan-400/20 bg-midnight/80 shadow-glow-cyan shrink-0 self-start md:self-center">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22D3EE] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#22D3EE]"></span>
+              </span>
+              <span class="text-[10px] font-mono tracking-widest text-cyan-300 uppercase font-extrabold">Active in Web3</span>
+            </div>
+          </div>
+
+          <!-- Cards Stack/Grid layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Card 1: CMO KedolikSwap (Large Card takes 8 cols) -->
+            <div class="lg:col-span-8 glass-card p-6 sm:p-8 rounded-2xl border border-[#7C3AED]/20 shadow-glow-purple flex flex-col justify-between gap-6 bg-gradient-to-br from-midnight via-slateBg/15 to-[#0b0c16] relative overflow-hidden">
+              <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-10 translate-y-10">
+                <svg class="w-64 h-64" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" stroke="white" stroke-width="0.3" fill="none" />
+                  <line x1="10" y1="50" x2="90" y2="50" stroke="white" stroke-width="0.3" />
+                  <line x1="50" y1="10" x2="50" y2="90" stroke="white" stroke-width="0.3" />
+                </svg>
+              </div>
+
+              <div class="flex flex-col gap-4 relative z-10">
+                <div class="flex items-center justify-between w-full">
+                  <div class="w-9 h-9 rounded-xl bg-[#7C3AED]/12 border border-[#7C3AED]/22 flex items-center justify-center text-violet-400">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </div>
+                  <span class="text-[9px] font-mono bg-[#7C3AED]/15 text-[#d2bbff] border border-[#7C3AED]/25 px-2.5 py-1 rounded-full uppercase font-bold">Leading Role</span>
+                </div>
+
+                <div class="mt-1">
+                  <h3 class="font-display font-extrabold text-white text-2xl">CMO — KedolikSwap</h3>
+                  <p class="text-xs font-mono text-[#22D3EE] font-semibold mt-1">Chief Marketing Officer & Community Lead</p>
+                  <p class="text-xs text-lightGray leading-relaxed mt-3 max-w-2xl">
+                    Leading marketing, community growth, campaign planning, content strategy, and ecosystem visibility for KedolikSwap. Managing cross-platform Telegram community hubs and public visibility campaigns.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2.5 relative z-10 border-t border-white/5 pt-4">
+                <span class="text-[9px] font-mono py-1 px-2.5 rounded bg-white/5 text-slate-300">#CryptoMarketing</span>
+                <span class="text-[9px] font-mono py-1 px-2.5 rounded bg-white/5 text-slate-300">#EcosystemGrowth</span>
+                <span class="text-[9px] font-mono py-1 px-2.5 rounded bg-white/5 text-slate-300">#DeFiCommunity</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Core Ambassador (Takes 4 cols) -->
+            <div class="lg:col-span-4 glass-card p-6 rounded-2xl flex flex-col justify-between gap-5">
+              <div class="flex flex-col gap-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-600/10 flex items-center justify-center text-[#22D3EE] border border-cyan-500/15">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-lg mt-1">Core Ambassador</h3>
+                <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Ecosystem Advocate</p>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Worked on community awareness, user support, blockchain adoption, and ecosystem engagement for Core. Acted as a key local support representative.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Row: Other Web3 Experiences -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            
+            <!-- Card 3: Blockchain Bull Club -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+              <div class="w-8 h-8 rounded-lg bg-pink-600/10 flex items-center justify-center text-pink-400 border border-pink-500/15">
+                <i data-lucide="megaphone" class="w-4 h-4"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-display font-bold text-white text-md">Founder</h3>
+                <p class="text-[9px] font-mono text-cyan-400 uppercase tracking-widest font-bold">BLOCKCHAIN BULL CLUB</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-1">
+                  Built and managed a blockchain-focused community for Web3 discussions, education, crypto updates, and project awareness.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4: Airdropzone04 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+              <div class="w-8 h-8 rounded-lg bg-cyan-600/10 flex items-center justify-center text-cyan-400 border border-cyan-500/15">
+                <i data-lucide="layers" class="w-4 h-4"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-display font-bold text-white text-md">Founder</h3>
+                <p class="text-[9px] font-mono text-cyan-400 uppercase tracking-widest font-bold">AIRDROPZONE04</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-1">
+                  Focused on airdrop discovery, crypto opportunities, user education, and campaign promotion. Organised giveaways and community tasks.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 5: Airdropzone Helpdesk -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+              <div class="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-violet-400 border border-[#7C3AED]/15">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-display font-bold text-white text-md">Founder & Support</h3>
+                <p class="text-[9px] font-mono text-cyan-400 uppercase tracking-widest font-bold">AIRDROPZONE HELPDESK</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-1">
+                  Telegram support and guidance community for crypto and airdrop users. Directly guided members on wallet connections and campaign parameters.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 4: SKILLS SECTION -->
+      <section id="skills" class="py-24 relative border-t border-white/5 bg-[#080d19]/30">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- Heading -->
+          <div class="max-w-3xl mb-16">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
+              My <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Skills</span>
+            </h2>
+            <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
+              Technical proficiencies and specialized skill sets in drafting and Web3 operations.
+            </p>
+          </div>
+
+          <!-- Two Groups of Skills -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Skill Group 1: AutoCAD / Civil Skills -->
+            <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-cyan-500/10">
+              <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                <div class="w-9 h-9 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-[#22D3EE]">
+                  <i data-lucide="drafting-compass" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-display font-extrabold text-white text-lg tracking-wide">AutoCAD / Civil Skills</h4>
+                  <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">Engineering foundation</p>
+                </div>
+              </div>
+              
+              <!-- Skill Pills -->
+              <div class="flex flex-wrap gap-2.5">
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-white/10 text-cyan-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-cyan-400/30 transition-all transition-colors">
+                  AutoCAD 2D Drafting
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-white/10 text-cyan-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-cyan-400/30 transition-all transition-colors">
+                  AutoCAD 3D Modeling
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Floor Plan Drafting
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Section & Elevation Drawing
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  PDF/Image to DWG Conversion
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Drawing Cleanup
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Civil Layout Preparation
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Basic Quantity Takeoff
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Project Documentation
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  General Electrical Works Background
+                </span>
+              </div>
+            </div>
+
+            <!-- Skill Group 2: Web3 / Crypto Skills -->
+            <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-violet-500/10">
+              <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                <div class="w-9 h-9 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-[#d2bbff]">
+                  <i data-lucide="network" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-display font-extrabold text-white text-lg tracking-wide">Web3 / Crypto Skills</h4>
+                  <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">Community & growth</p>
+                </div>
+              </div>
+              
+              <!-- Skill Pills -->
+              <div class="flex flex-wrap gap-2.5">
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-[#7C3AED]/20 text-[#d2bbff] px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-[#7C3AED]/40 transition-all transition-colors">
+                  Telegram Community Management
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-[#7C3AED]/20 text-[#d2bbff] px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-[#7C3AED]/40 transition-all transition-colors">
+                  Crypto Community Growth
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  AMA Campaign Management
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  KOL Collaboration
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Airdrop Marketing
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Giveaway Campaigns
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Web3 Content Strategy
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Blockchain Marketing
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Project Analysis
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  User Support
+                </span>
+                <span class="text-[11px] font-mono tracking-wider bg-midnight/80 border border-zinc-700/30 text-zinc-300 px-3.5 py-2 rounded-md font-semibold select-none shadow-sm hover:border-white/10 transition-all transition-colors">
+                  Ecosystem Engagement
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 5: SERVICES SECTION -->
+      <section id="services" class="py-24 relative border-t border-white/5 bg-midnight/20">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- Heading -->
+          <div class="max-w-3xl mb-16">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+              What I Can <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Help With</span>
+            </h2>
+            <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-4">
+              Available for Web3 community work, marketing support, and beginner AutoCAD drafting assistant tasks.
+            </p>
+          </div>
+
+          <!-- Services Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-cyan-400">
+                  <i data-lucide="drafting-compass" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">AutoCAD Drafting Support</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  2D floor plans, drawing cleanup, layout sheets, section/elevation drawings, layer allocation, and basic 3D shape modeling.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-cyan-400">
+                  <i data-lucide="file-arrow-right" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">PDF/Image to DWG Conversion</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Carefully re-draft and convert hand sketches, raster PDF plans, jpeg elevations, or scanned blueprints into clean, fully editable DWG files.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
+                  <i data-lucide="messages-square" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">Web3 Community Management</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Moderation of Telegram groups, maintaining engagement, helping users with operational details, general support, and community growth strategy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
+                  <i data-lucide="trending-up" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">Marketing Campaign Support</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Planning and execution of AMAs, standard giveaways, interactive educational events, airdrop promotions, and organic community support.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
+                  <i data-lucide="network" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">KOL & Partnership Support</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Helping Web3 initiatives coordinate outreach campaigns, connect with local crypto communities, moderators, and Web3 micro-influencers.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+              <div class="flex flex-col gap-3">
+                <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
+                  <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-white text-md mt-1">Content & Announcement Writing</h3>
+                <p class="text-xs text-lightGray leading-relaxed">
+                  Drafting clear posts, announcements, captions, structural campaign manuals, Telegram bot messages, and promotional context pieces.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 6: PROJECTS / PORTFOLIO SECTION -->
+      <section id="projects" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <!-- Heading -->
+          <div class="max-w-3xl mb-16">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+              Projects & <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Portfolio</span>
+            </h2>
+            <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
+              Highlighting my involvement in shaping communities and developing drafting skills.
+            </p>
+          </div>
+
+          <!-- Project Grid (5 cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Project 1 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-mono tracking-wider text-violet-400 font-bold uppercase bg-[#7C3AED]/10 border border-[#7C3AED]/15 px-2.5 py-1 rounded">Web3 / DeFi</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-zinc-500 group-hover:text-violet-400 transition-colors"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-white text-lg group-hover:text-violet-300 transition-colors mt-2">KedolikSwap</h3>
+                <p class="text-[10px] font-mono tracking-wider text-[#22D3EE] font-bold uppercase">Role: CMO</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-2">
+                  Supporting marketing, campaign planning, community growth, content strategy, and ecosystem visibility.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-[#22D3EE]/35">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Crypto Community</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-zinc-500 group-hover:text-cyan-400 transition-colors"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-white text-lg group-hover:text-[#22D3EE] transition-colors mt-2">Blockchain Bull Club</h3>
+                <p class="text-[10px] font-mono tracking-wider text-[#22D3EE] font-bold uppercase">Role: Founder</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-2">
+                  A blockchain-focused community for Web3 discussions, crypto education, and project updates.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Airdrop hub</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-zinc-500 group-hover:text-cyan-400 transition-colors"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-white text-lg group-hover:text-[#22D3EE] transition-colors mt-2">Airdropzone04</h3>
+                <p class="text-[10px] font-mono tracking-wider text-[#22D3EE] font-bold uppercase">Role: Founder</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-2">
+                  Focused on airdrop discovery, campaign promotion, and user education.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-mono tracking-wider text-violet-400 font-bold uppercase bg-[#7C3AED]/10 border border-[#7C3AED]/15 px-2.5 py-1 rounded">Telegram Support</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-zinc-500 group-hover:text-violet-400 transition-colors"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-white text-lg group-hover:text-violet-300 transition-colors mt-2">Airdropzone Helpdesk</h3>
+                <p class="text-[10px] font-mono tracking-wider text-[#22D3EE] font-bold uppercase">Role: Community Support</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-2">
+                  Support and guidance community for crypto and airdrop users. Helper channels for wallet connection setup and validation queries.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Drafting Portfolio</span>
+                  <i data-lucide="compass" class="w-3.5 h-3.5 text-zinc-500 group-hover:text-cyan-400 transition-colors"></i>
+                </div>
+                <h3 class="font-display font-extrabold text-white text-lg group-hover:text-[#22D3EE] transition-colors mt-2">AutoCAD Learning Projects</h3>
+                <p class="text-[10px] font-mono tracking-wider text-[#22D3EE] font-bold uppercase font-bold">Role: Civil Drafting Learner</p>
+                <p class="text-xs text-lightGray leading-relaxed mt-2">
+                  Building sample projects in floor plans, section drawings, elevation drawings, and basic 3D models. Structured mock layers mapping.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 7: CAREER DIRECTION SECTION -->
+      <section id="career" class="py-24 relative overflow-hidden border-t border-white/5 bg-[#0a0f1d]/40">
+        <!-- Blueprint lines backdrop styling to reinforce technical context -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+          <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <div class="max-w-3xl mb-12">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+              My Career <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Direction</span>
+            </h2>
+            <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
+              Merging communication strategy and technical drafting for a multi-disciplined work horizon.
+            </p>
+          </div>
+
+          <!-- Highlight card -->
+          <div class="glass-card p-8 sm:p-10 rounded-2xl border border-cyan-500/15 bg-midnight/60 shadow-glow-cyan max-w-4xl relative overflow-hidden">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              
+              <!-- Quote / Phrase left -->
+              <div class="md:col-span-4 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6 flex flex-col justify-center gap-2">
+                <i data-lucide="quote" class="w-8 h-8 text-[#22D3EE] opacity-50 mb-1"></i>
+                <blockquote class="font-display font-extrabold text-xl sm:text-2xl leading-snug text-white">
+                  "Building Web3 communities today, designing civil spaces for tomorrow."
+                </blockquote>
+              </div>
+
+              <!-- General details text right -->
+              <div class="md:col-span-8 flex flex-col gap-4">
+                <p class="text-sm text-lightGray leading-relaxed">
+                  My goal is to grow as a multi-skilled remote professional by combining Web3 community management experience with Civil Engineering and AutoCAD drafting skills. I am developing a strong foundation in technical drafting while continuing to support crypto and blockchain projects with community growth, campaign management, and Web3 marketing.
+                </p>
+                <p class="text-xs font-mono text-[#22D3EE] flex items-center gap-2 font-bold">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#22D3EE]"></i> READY FOR REMOTE WEB3 & DRAFTING ASSISTANT ROLES
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 8: CONTACT & LET'S WORK TOGETHER -->
+      <section id="contact" class="py-24 relative border-t border-white/5 bg-midnight/10">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-start">
+            
+            <!-- Left Info Block -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+              <div class="max-w-xl">
+                <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">
+                  Let’s <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold">Work Together.</span>
+                </h2>
+                <p class="text-sm text-[#94a3b8] leading-relaxed max-w-md">
+                  Open to Web3 community roles, marketing collaborations, AMA support, airdrop campaign work, AutoCAD drafting assistant tasks, and remote project opportunities.
+                </p>
+              </div>
+
+              <!-- Sleek Vertical Stack with circular bullet play nodes -->
+              <div class="flex flex-col gap-5 mt-4">
+                
+                <!-- Telegram -->
+                <a href="https://t.me/ishi_13" target="_blank" class="flex items-center gap-4 group w-fit">
+                  <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-cyan-400 group-hover:border-cyan-400/40 transition-all shadow-md">
+                    <i data-lucide="send" class="w-4 h-4 text-white font-bold"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider">Direct Message</span>
+                    <span class="text-xs font-mono tracking-wider text-zinc-300 group-hover:text-white transition-colors">Telegram (@ishi_13)</span>
+                  </div>
+                </a>
+
+                <!-- Twitter (X) -->
+                <a href="https://x.com/Ishtiak_Ahamed" target="_blank" class="flex items-center gap-4 group w-fit">
+                  <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-white group-hover:border-white/30 transition-all shadow-md">
+                    <i data-lucide="twitter" class="w-4 h-4 text-white font-bold"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider">Social Feed</span>
+                    <span class="text-xs font-mono tracking-wider text-zinc-300 group-hover:text-white transition-colors">Twitter (X)</span>
+                  </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/ishtiak-ahamed" target="_blank" class="flex items-center gap-4 group w-fit">
+                  <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-cyan-400 group-hover:border-cyan-400/40 transition-all shadow-md">
+                    <i data-lucide="linkedin" class="w-4 h-4 text-white font-bold"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider">Professional Profile</span>
+                    <span class="text-xs font-mono tracking-wider text-zinc-300 group-hover:text-white transition-colors">LinkedIn</span>
+                  </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:ishtiakahamed2008@gmail.com" class="flex items-center gap-4 group w-fit">
+                  <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-pink-400 group-hover:border-pink-400/30 transition-all shadow-md">
+                    <i data-lucide="mail" class="w-4 h-4 text-white font-bold"></i>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider">Direct Inbox</span>
+                    <span class="text-xs font-mono tracking-wider text-zinc-300 group-hover:text-white transition-colors">ishtiakahamed2008@gmail.com</span>
+                  </div>
+                </a>
+
+              </div>
+
+            </div>
+
+            <!-- Right: Input form layout -->
+            <div class="lg:col-span-7 w-full">
+              <div class="glass-card p-7 sm:p-9 rounded-2xl relative bg-midnight/30">
+                
+                <!-- 
+                  GITHUB PAGES FORM NOTE: 
+                  If you wish to receive actual messages, replace this form with a Formspree or Web3Forms post endpoint:
+                  e.g., <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                -->
+                <form id="contact-form" class="flex flex-col gap-6">
+                  
+                  <div class="flex flex-col border-b border-white/20 pb-2 focus-within:border-cyan-400 transition-colors">
+                    <label for="form-name" class="text-[9px] font-mono uppercase tracking-widest text-lightGray font-bold">Name</label>
+                    <input type="text" id="form-name" required class="w-full bg-transparent border-none text-white text-sm focus:outline-none placeholder-zinc-500 py-1.5 font-sans" placeholder="John Doe" />
+                  </div>
+
+                  <div class="flex flex-col border-b border-white/20 pb-2 focus-within:border-[#7C3AED]/70 transition-colors">
+                    <label for="form-email" class="text-[9px] font-mono uppercase tracking-widest text-lightGray font-bold">Email</label>
+                    <input type="email" id="form-email" required class="w-full bg-transparent border-none text-white text-sm focus:outline-none placeholder-zinc-500 py-1.5 font-sans" placeholder="john@example.com" />
+                  </div>
+
+                  <div class="flex flex-col border-b border-white/20 pb-2 focus-within:border-cyan-400 transition-colors">
+                    <label for="form-message" class="text-[9px] font-mono uppercase tracking-widest text-lightGray font-bold">Message</label>
+                    <textarea id="form-message" rows="3" required class="w-full bg-transparent border-none text-white text-sm focus:outline-none placeholder-zinc-500 py-2 resize-none font-sans" placeholder="How can we collaborate on AutoCAD or Web3?"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-gradient w-full py-4 rounded-xl text-white font-display font-semibold tracking-wider text-[11px] uppercase flex items-center justify-center gap-2 shadow-glow-purple select-none mt-2">
+                    <span>Send Message</span>
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  </button>
+                </form>
+
+                <!-- Toast Notice -->
+                <div id="form-toast" class="hidden absolute inset-0 bg-midnight/95 backdrop-blur-md flex-col items-center justify-center gap-4 text-center p-6 z-10 transition-opacity duration-300">
+                  <div class="w-12 h-12 rounded-full bg-cyan-600/10 border border-cyan-400 flex items-center justify-center text-cyan-400 shadow-glow-cyan">
+                    <i data-lucide="cpu" class="w-5 h-5 animate-spin"></i>
+                  </div>
+                  <div class="flex flex-col gap-1 items-center justify-center">
+                    <span class="font-mono text-[9px] text-[#22D3EE] uppercase tracking-widest font-bold">PROCESSING METRICS...</span>
+                    <h4 class="font-display font-bold text-white text-md">Opening Mail Client</h4>
+                    <p class="text-xs text-lightGray px-8 max-w-xs mt-1">
+                      Directing proposal parameters to <strong>ishtiakahamed2008@gmail.com</strong>.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 bg-midnight/90 py-12 text-center text-xs relative z-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+        
+        <span class="font-display font-medium text-white text-[13px]">
+          © <span class="font-mono">2026</span> Ishtiak Ahamed. All rights reserved.
+        </span>
+
+        <span class="font-mono text-[9px] text-zinc-500 tracking-wider uppercase hidden lg:inline">
+          COMMUNITY GROWTH X ENGINEERING BUILDING MATRIX
+        </span>
+
+        <div class="flex items-center gap-4">
+          <a href="https://linkedin.com/in/ishtiak-ahamed" target="_blank" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-lightGray hover:text-[#22D3EE] hover:border-[#22D3EE]/30 transition-all font-sans" title="LinkedIn Profile"><i data-lucide="linkedin" class="w-3.5 h-3.5 text-white"></i></a>
+          <a href="https://x.com/Ishtiak_Ahamed" target="_blank" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-lightGray hover:text-white hover:border-white/20 transition-all font-mono" title="X Profile"><i data-lucide="twitter" class="w-3.5 h-3.5 text-white"></i></a>
+          <a href="https://t.me/ishi_13" target="_blank" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-lightGray hover:text-[#22D3EE] hover:border-[#22D3EE]/30 transition-all" title="Telegram Channel"><i data-lucide="send" class="w-3.5 h-3.5 text-white"></i></a>
+          <a href="mailto:ishtiakahamed2008@gmail.com" class="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center text-lightGray hover:text-pink-400 hover:border-pink-400/30 transition-all" title="Email Direct"><i data-lucide="mail" class="w-3.5 h-3.5 text-white"></i></a>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- INTERACTIVE LOGIC SCRIPT -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Trigger Logic
+      const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileDropdownMenu = document.getElementById('mobile-menu');
+      const menuIconState = document.getElementById('menu-icon-state');
+
+      if (mobileToggleBtn && mobileDropdownMenu) {
+        mobileToggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = !mobileDropdownMenu.classList.contains('hidden');
+          
+          if (isOpen) {
+            mobileDropdownMenu.classList.add('opacity-0');
+            mobileDropdownMenu.classList.add('-translate-y-2');
+            setTimeout(() => {
+              mobileDropdownMenu.classList.add('hidden');
+              mobileDropdownMenu.classList.remove('flex');
+            }, 300);
+            menuIconState.setAttribute('data-lucide', 'menu');
+          } else {
+            mobileDropdownMenu.classList.remove('hidden');
+            mobileDropdownMenu.classList.add('flex');
+            setTimeout(() => {
+              mobileDropdownMenu.classList.remove('opacity-0');
+              mobileDropdownMenu.classList.remove('-translate-y-2');
+            }, 10);
+            menuIconState.setAttribute('data-lucide', 'x');
+          }
+          lucide.createIcons();
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = document.querySelectorAll('.mobile-nav-item');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileDropdownMenu.classList.add('opacity-0');
+            mobileDropdownMenu.classList.add('-translate-y-2');
+            setTimeout(() => {
+              mobileDropdownMenu.classList.add('hidden');
+              mobileDropdownMenu.classList.remove('flex');
+            }, 300);
+            menuIconState.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          });
+        });
+
+        // Close if click outside menu
+        document.addEventListener('click', (e) => {
+          if (!mobileDropdownMenu.contains(e.target) && e.target !== mobileToggleBtn && !mobileToggleBtn.contains(e.target)) {
+            if (!mobileDropdownMenu.classList.contains('hidden')) {
+              mobileDropdownMenu.classList.add('opacity-0');
+              mobileDropdownMenu.classList.add('-translate-y-2');
+              setTimeout(() => {
+                mobileDropdownMenu.classList.add('hidden');
+                mobileDropdownMenu.classList.remove('flex');
+              }, 300);
+              menuIconState.setAttribute('data-lucide', 'menu');
+              lucide.createIcons();
+            }
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 1024) {
+            mobileDropdownMenu.classList.add('hidden');
+            mobileDropdownMenu.classList.remove('flex');
+            menuIconState.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+          }
+        });
+      }
+
+      // Smooth scroll triggers
+      const navigationLinks = document.querySelectorAll('a[href^="#"]');
+      navigationLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          e.preventDefault();
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const offsetHeader = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offsetHeader;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Active Section Nav Focus Highlight Tracking
+      const sectionsList = document.querySelectorAll('section');
+      const navigationItems = document.querySelectorAll('.nav-item');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.pageYOffset + 120;
+
+        sectionsList.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navigationItems.forEach(navLink => {
+          navLink.classList.remove('active-nav-link');
+          const linkTarget = navLink.getAttribute('href');
+          if (linkTarget === `#${currentSectionId}`) {
+            navLink.classList.add('active-nav-link');
+          }
+        });
+      });
+
+      // Background Canvas grid nodes particle animation
+      const backgroundCanvas = document.getElementById('hero-connection-canvas');
+      if (backgroundCanvas) {
+        const drawCtx = backgroundCanvas.getContext('2d');
+        let canvasW = backgroundCanvas.width = backgroundCanvas.parentElement.offsetWidth;
+        let canvasH = backgroundCanvas.height = backgroundCanvas.parentElement.offsetHeight;
+
+        window.addEventListener('resize', () => {
+          if (backgroundCanvas && backgroundCanvas.parentElement) {
+            canvasW = backgroundCanvas.width = backgroundCanvas.parentElement.offsetWidth;
+            canvasH = backgroundCanvas.height = backgroundCanvas.parentElement.offsetHeight;
+          }
+        });
+
+        const activeParticles = [];
+        const particleIntensityCount = 35;
+
+        for (let idx = 0; idx < particleIntensityCount; idx++) {
+          activeParticles.push({
+            coordinateX: Math.random() * canvasW,
+            coordinateY: Math.random() * canvasH,
+            speedX: (Math.random() - 0.5) * 0.35,
+            speedY: (Math.random() - 0.5) * 0.35,
+            nodeRadius: Math.random() * 1.5 + 0.6,
+            nodeColor: Math.random() > 0.6 ? '#7C3AED' : '#22D3EE'
+          });
+        }
+
+        function frameRenderer() {
+          drawCtx.clearRect(0, 0, canvasW, canvasH);
+          
+          for (let pIdx = 0; pIdx < particleIntensityCount; pIdx++) {
+            const nodeParticle = activeParticles[pIdx];
+            
+            nodeParticle.coordinateX += nodeParticle.speedX;
+            nodeParticle.coordinateY += nodeParticle.speedY;
+            
+            if (nodeParticle.coordinateX < 0 || nodeParticle.coordinateX > canvasW) nodeParticle.speedX *= -1;
+            if (nodeParticle.coordinateY < 0 || nodeParticle.coordinateY > canvasH) nodeParticle.speedY *= -1;
+            
+            drawCtx.beginPath();
+            drawCtx.arc(nodeParticle.coordinateX, nodeParticle.coordinateY, nodeParticle.nodeRadius, 0, Math.PI * 2);
+            drawCtx.fillStyle = nodeParticle.nodeColor;
+            drawCtx.shadowColor = nodeParticle.nodeColor;
+            drawCtx.shadowBlur = 3;
+            drawCtx.fill();
+            drawCtx.shadowBlur = 0;
+            
+            for (let innerIdx = pIdx + 1; innerIdx < particleIntensityCount; innerIdx++) {
+              const targetNode = activeParticles[innerIdx];
+              const nodesGapDistance = Math.hypot(nodeParticle.coordinateX - targetNode.coordinateX, nodeParticle.coordinateY - targetNode.coordinateY);
+              
+              if (nodesGapDistance < 100) {
+                drawCtx.beginPath();
+                drawCtx.moveTo(nodeParticle.coordinateX, nodeParticle.coordinateY);
+                drawCtx.lineTo(targetNode.coordinateX, targetNode.coordinateY);
+                drawCtx.strokeStyle = `rgba(34, 211, 238, ${0.08 * (1 - nodesGapDistance / 100)})`;
+                drawCtx.lineWidth = 0.5;
+                drawCtx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(frameRenderer);
+        }
+        frameRenderer();
+      }
+
+      // Contact Form mailto Dispatcher Setup
+      const mainContactForm = document.getElementById('contact-form');
+      const actionModalToastNotice = document.getElementById('form-toast');
+
+      if (mainContactForm) {
+        mainContactForm.addEventListener('submit', (evt) => {
+          evt.preventDefault();
+          const targetSenderName = document.getElementById('form-name').value;
+          const targetSenderMail = document.getElementById('form-email').value;
+          const targetMessageText = document.getElementById('form-message').value;
+
+          const mailSubjectLine = `Proposal from CAD / Web3 Workspace Portfolio`;
+          const mailBodyParagraph = `Hello Ishtiak,\n\nMy name is ${targetSenderName} (${targetSenderMail}).\n\nI have the following proposal/job details for you:\n\n"${targetMessageText}"\n\nLooking forward to speaking with you soon.`;
+          
+          const fullyBuiltMailtoEndpoint = `mailto:ishtiakahamed2008@gmail.com?subject=${encodeURIComponent(mailSubjectLine)}&body=${encodeURIComponent(mailBodyParagraph)}`;
+
+          if (actionModalToastNotice) {
+            actionModalToastNotice.classList.remove('hidden');
+            actionModalToastNotice.classList.add('flex');
+
+            setTimeout(() => {
+              window.location.href = fullyBuiltMailtoEndpoint;
+            }, 1000);
+
+            setTimeout(() => {
+              actionModalToastNotice.classList.add('opacity-0');
+              setTimeout(() => {
+                actionModalToastNotice.classList.add('hidden');
+                actionModalToastNotice.classList.remove('flex', 'opacity-0');
+                mainContactForm.reset();
+              }, 450);
+            }, 6000);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

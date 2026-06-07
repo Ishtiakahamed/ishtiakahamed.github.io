@@ -1,0 +1,6 @@
+{
+  "name": "Ishtiak Ahamed Portfolio",
+  "description": "Personal portfolio website of Ishtiak Ahamed, Web3 Community Manager & AutoCAD Civil Drafting Assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
