@@ -42,6 +42,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- AOS Animate On Scroll Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -389,39 +392,16 @@
 
       /* Native reduced motion compliance */
       @media (prefers-reduced-motion: reduce) {
-        .reveal-on-scroll,
-        .glass-card,
-        .btn-gradient,
-        .btn-outline,
-        .spin-slow,
-        .spin-reverse,
-        .animate-pulse-slow,
-        .hero-title-line,
-        .animate-gradient-shine,
-        .animate-fade-slide-text,
-        .animate-blink,
-        #typing-cursor,
-        .animate-float-hero,
-        .animate-slow-orb-1,
-        .animate-slow-orb-2,
-        .animate-particle-drift-1,
-        .animate-particle-drift-2,
-        .animate-orbit-rotate-clockwise,
-        .animate-orbit-rotate-counter,
-        .animate-typing-fade,
-        .animate-float-1,
-        .animate-float-2,
-        .animate-float-3,
-        .animate-float-4,
-        img,
-        a,
-        div {
-          animation: none !important;
-          transition: none !important;
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
           transform: none !important;
-          backdrop-filter: none !important;
-          -webkit-backdrop-filter: none !important;
-          letter-spacing: normal !important;
+        }
+        .reveal-on-scroll {
+          opacity: 1 !important;
+          transform: none !important;
         }
         .hero-title-line {
           opacity: 1 !important;
@@ -429,9 +409,74 @@
         #typing-cursor {
           display: none !important;
         }
-        .reveal-on-scroll {
-          opacity: 1 !important;
+      }
+
+      /* Custom animations & premium elements requested */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-24px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-down {
+        animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes floatSlow {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .animate-float {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+
+      @keyframes glowPulse {
+        0%, 100% {
+          box-shadow: 0 0 15px rgba(34, 211, 238, 0.25);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(34, 211, 238, 0.65), 0 0 12px rgba(124, 58, 237, 0.35);
+        }
+      }
+      .animate-glow-pulse {
+        animation: glowPulse 2.2s ease-in-out infinite;
+      }
+
+      /* Custom Hover Effects for interactive nodes, buttons and cards */
+      .glass-card {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      .glass-card:hover {
+        transform: translateY(-6px) scale(1.015) !important;
+        box-shadow: 0 22px 40px rgba(0, 0, 0, 0.6), 0 0 22px rgba(34, 211, 238, 0.25) !important;
+        border-color: rgba(34, 211, 238, 0.4) !important;
+      }
+
+      /* Skill components layout */
+      #skills span, section#learning span {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      #skills span:hover, section#learning span:hover {
+        transform: translateY(-2px) scale(1.06) !important;
+        text-shadow: 0 0 10px rgba(34, 211, 238, 0.6) !important;
+        box-shadow: 0 0 16px rgba(124, 58, 237, 0.35) !important;
+        border-color: rgba(124, 58, 237, 0.4) !important;
+      }
+
+      a[href^="https://t.me"], a[href^="https://x.com"], a[href^="https://github"], a[href^="https://www.linkedin"], a[href^="https://www.facebook"], a[href^="https://www.instagram"] {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      a[href^="https://t.me"]:hover, a[href^="https://x.com"]:hover, a[href^="https://github"]:hover, a[href^="https://www.linkedin"]:hover, a[href^="https://www.facebook"]:hover, a[href^="https://www.instagram"]:hover {
+        transform: scale(1.06) translateY(-2px) !important;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.35) !important;
       }
     </style>
   </head>
@@ -562,7 +607,7 @@
             </div>
 
             <!-- Header Typography -->
-            <h1 class="font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2 md:mb-3">
+            <h1 class="animate-fade-in-down font-display font-extrabold text-[36px] sm:text-[48px] md:text-[56px] leading-[1.1] tracking-tight text-white mb-2 md:mb-3">
               <span class="hero-title-line delay-line-1 select-text">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-[#22D3EE] to-violet-400 font-extrabold animate-gradient-shine py-0.5">Multi-Skilled</span><br />
                 Remote Professional
@@ -636,7 +681,7 @@
             <!-- Modern Asymmetrical Layout of Buttons -->
             <div class="flex flex-col gap-3 mt-6 w-full pl-0.5 hero-animate delay-7">
               <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-                <a href="#learning" class="btn-gradient px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 shadow-glow-cyan select-none cursor-pointer">
+                <a href="#learning" class="btn-gradient animate-glow-pulse px-7 py-3.5 rounded-full text-white font-display font-bold tracking-wider text-[11px] uppercase flex items-center justify-between sm:justify-center gap-3 shadow-glow-cyan select-none cursor-pointer">
                   <span>View My Journey</span>
                   <span class="w-5 h-5 rounded-full bg-white text-midnight flex items-center justify-center"><i data-lucide="arrow-down" class="w-3" style="height:12px; width:12px;"></i></span>
                 </a>
@@ -657,7 +702,7 @@
             <div class="animate-float-hero relative w-[340px] sm:w-[380px] h-[340px] sm:h-[380px] flex items-center justify-center">
               
               <!-- Central Circle with Image -->
-              <div class="relative w-[210px] sm:w-[240px] h-[210px] sm:h-[240px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400 shadow-glow-purple z-10 flex items-center justify-center select-none">
+              <div class="animate-float relative w-[210px] sm:w-[240px] h-[210px] sm:h-[240px] rounded-full p-[2px] bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400 shadow-glow-purple z-10 flex items-center justify-center select-none">
                 <div class="w-full h-full rounded-full overflow-hidden border border-white/10 bg-slateBg">
                   <img 
                     src="assets/ishtiak-profile.jpg"
@@ -743,7 +788,7 @@
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-4">
               My <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Learning Journey</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-3">
@@ -760,13 +805,13 @@
             <div class="absolute left-[3px] sm:left-[11px] top-4 bottom-4 w-[1.5px] bg-[#22D3EE]/32 z-0"></div>
 
             <!-- Card 1: Diploma in Civil Engineering -->
-            <div class="relative group">
+            <div data-aos="fade-up" class="relative group">
               <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-white bg-midnight z-10"></div>
               
               <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
                 <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/5 pb-2">
                   <h3 class="font-display font-semibold text-white text-lg">Diploma in Civil Engineering</h3>
-                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/10 text-lightGray px-2.5 py-1 rounded uppercase">EXPC. 2028</span>
+                  <span class="text-[9px] font-mono tracking-wider bg-white/5 border border-white/10 text-lightGray px-2.5 py-1 rounded uppercase">Expected 2028</span>
                 </div>
                 <p class="text-[10px] font-mono text-[#22D3EE] font-bold uppercase tracking-widest pl-0.5">DHAKA POLYTECHNIC INSTITUTE</p>
                 <p class="text-xs text-lightGray leading-relaxed mt-1 pl-0.5">
@@ -776,7 +821,7 @@
             </div>
 
             <!-- Card 2: AutoCAD 2D Drafting -->
-            <div class="relative group">
+            <div data-aos="fade-up" class="relative group">
               <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-cyan-400 bg-midnight z-10"></div>
               
               <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
@@ -800,7 +845,7 @@
             </div>
 
             <!-- Card 3: AutoCAD 3D Modeling -->
-            <div class="relative group">
+            <div data-aos="fade-up" class="relative group">
               <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-violet-500 bg-midnight z-10"></div>
               
               <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
@@ -823,7 +868,7 @@
             </div>
 
             <!-- Card 4: SSC Technical / Vocational -->
-            <div class="relative group">
+            <div data-aos="fade-up" class="relative group">
               <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-white bg-midnight z-10"></div>
               
               <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5">
@@ -839,7 +884,7 @@
             </div>
 
             <!-- Card 5: Civil Drafting Career Goal -->
-            <div class="relative group">
+            <div data-aos="fade-up" class="relative group">
               <div class="absolute -left-[19px] sm:-left-[37px] top-6 w-3 h-3 rounded-full border-2 border-cyan-400 bg-midnight z-10"></div>
               
               <div class="glass-card p-6 sm:p-7 rounded-xl flex flex-col gap-2.5 border border-[#22D3EE]/20 bg-[#080d19]/80">
@@ -901,7 +946,7 @@
           <!-- Header Area -->
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 gap-6">
             <div class="max-w-3xl">
-              <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
+              <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
                 My Web3 <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Work Experience</span>
               </h2>
               <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-4">
@@ -926,7 +971,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             <!-- Card 1: CMO KedolikSwap (Large Card takes 8 cols) -->
-            <div class="lg:col-span-8 glass-card p-6 sm:p-8 rounded-2xl border border-[#7C3AED]/20 shadow-glow-purple flex flex-col justify-between gap-6 bg-gradient-to-br from-midnight via-slateBg/15 to-[#0b0c16] relative overflow-hidden">
+            <div data-aos="fade-right" class="lg:col-span-8 glass-card p-6 sm:p-8 rounded-2xl border border-[#7C3AED]/20 shadow-glow-purple flex flex-col justify-between gap-6 bg-gradient-to-br from-midnight via-slateBg/15 to-[#0b0c16] relative overflow-hidden">
               <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-10 translate-y-10">
                 <svg class="w-64 h-64" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="45" stroke="white" stroke-width="0.3" fill="none" />
@@ -960,7 +1005,7 @@
             </div>
 
             <!-- Card 2: Core Ambassador (Takes 4 cols) -->
-            <div class="lg:col-span-4 glass-card p-6 rounded-2xl flex flex-col justify-between gap-5">
+            <div data-aos="fade-left" class="lg:col-span-4 glass-card p-6 rounded-2xl flex flex-col justify-between gap-5">
               <div class="flex flex-col gap-3">
                 <div class="w-8 h-8 rounded-lg bg-cyan-600/10 flex items-center justify-center text-[#22D3EE] border border-cyan-500/15">
                   <i data-lucide="shield-check" class="w-4 h-4"></i>
@@ -979,7 +1024,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             
             <!-- Card 3: Blockchain Bull Club -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+            <div data-aos="fade-right" class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
               <div class="w-8 h-8 rounded-lg bg-pink-600/10 flex items-center justify-center text-pink-400 border border-pink-500/15">
                 <i data-lucide="megaphone" class="w-4 h-4"></i>
               </div>
@@ -993,7 +1038,7 @@
             </div>
 
             <!-- Card 4: Airdropzone04 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
               <div class="w-8 h-8 rounded-lg bg-cyan-600/10 flex items-center justify-center text-cyan-400 border border-cyan-500/15">
                 <i data-lucide="layers" class="w-4 h-4"></i>
               </div>
@@ -1007,7 +1052,7 @@
             </div>
 
             <!-- Card 5: Airdropzone Helpdesk -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
+            <div data-aos="fade-left" class="glass-card p-6 rounded-2xl flex flex-col justify-between gap-4">
               <div class="w-8 h-8 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center text-violet-400 border border-[#7C3AED]/15">
                 <i data-lucide="users" class="w-4 h-4"></i>
               </div>
@@ -1031,7 +1076,7 @@
           
           <!-- Header Area -->
           <div class="max-w-3xl mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
               Remote Work Experience & <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Project Value</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-4">
@@ -1049,7 +1094,7 @@
             <div class="lg:col-span-8 flex flex-col gap-8 justify-between">
               
               <!-- Circular KPI Grid: 4 items (Stacks beautifully to 1 or 2 columns on mobile, 4 columns on large screens) -->
-              <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+              <div data-aos="fade-up" class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                 
                 <!-- Circular Stat 1 -->
                 <div class="relative group flex flex-col items-center">
@@ -1122,7 +1167,7 @@
               </div>
 
               <!-- Pill Badge (Card 5) -->
-              <div class="relative group w-full">
+              <div data-aos="fade-up" class="relative group w-full">
                 <div class="absolute -inset-1 bg-gradient-to-r from-violet-600/10 to-cyan-400/10 rounded-full opacity-50 group-hover:opacity-80 blur transition duration-500"></div>
                 <div class="relative w-full rounded-full p-[1px] bg-gradient-to-r from-violet-500/25 via-cyan-500/25 to-transparent">
                   <div class="rounded-full px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-slateBg/80 backdrop-blur-xl border border-white/5">
@@ -1153,7 +1198,7 @@
             </div>
 
             <!-- Right Side: Experience Summary & BDT Note (4 columns on desktop) -->
-            <div class="lg:col-span-4 glass-card p-6 sm:p-8 rounded-3xl border border-white/10 shadow-glow-purple flex flex-col justify-between bg-gradient-to-br from-midnight via-slateBg/30 to-[#0b0d1e] relative overflow-hidden">
+            <div data-aos="fade-left" class="lg:col-span-4 glass-card p-6 sm:p-8 rounded-3xl border border-white/10 shadow-glow-purple flex flex-col justify-between bg-gradient-to-br from-midnight via-slateBg/30 to-[#0b0d1e] relative overflow-hidden">
               <div class="absolute right-0 bottom-0 opacity-[0.03] pointer-events-none transform translate-x-8 translate-y-8">
                 <i data-lucide="award" class="w-56 h-56 text-[#7C3AED]"></i>
               </div>
@@ -1192,7 +1237,7 @@
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-3">
               My <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Skills</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
@@ -1204,7 +1249,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             <!-- Skill Group 1: AutoCAD / Civil Skills -->
-            <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-cyan-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-cyan-500/10">
               <div class="flex items-center gap-3 border-b border-white/5 pb-4">
                 <div class="w-9 h-9 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-[#22D3EE]">
                   <i data-lucide="drafting-compass" class="w-5 h-5"></i>
@@ -1251,7 +1296,7 @@
             </div>
 
             <!-- Skill Group 2: Web3 / Crypto Skills -->
-            <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-violet-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col gap-5 border border-violet-500/10">
               <div class="flex items-center gap-3 border-b border-white/5 pb-4">
                 <div class="w-9 h-9 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-[#d2bbff]">
                   <i data-lucide="network" class="w-5 h-5"></i>
@@ -1311,7 +1356,7 @@
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
               What I Can <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Help With</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold mb-4">
@@ -1323,7 +1368,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- Card 1 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-cyan-400">
                   <i data-lucide="drafting-compass" class="w-5 h-5"></i>
@@ -1336,7 +1381,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-zinc-800/50">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-cyan-600/10 border border-cyan-500/15 flex items-center justify-center text-cyan-400">
                   <i data-lucide="file-arrow-right" class="w-5 h-5"></i>
@@ -1349,7 +1394,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
                   <i data-lucide="messages-square" class="w-5 h-5"></i>
@@ -1362,7 +1407,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
                   <i data-lucide="trending-up" class="w-5 h-5"></i>
@@ -1375,7 +1420,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
                   <i data-lucide="network" class="w-5 h-5"></i>
@@ -1388,7 +1433,7 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
+            <div data-aos="fade-up" class="glass-card p-6 rounded-2xl flex flex-col gap-4 justify-between bg-midnight/40 border border-violet-500/10">
               <div class="flex flex-col gap-3">
                 <div class="w-10 h-10 rounded-xl bg-violet-600/10 border border-violet-500/15 flex items-center justify-center text-violet-400">
                   <i data-lucide="pen-tool" class="w-5 h-5"></i>
@@ -1411,7 +1456,7 @@
           
           <!-- Heading -->
           <div class="max-w-3xl mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
               Projects & <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Portfolio</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
@@ -1423,7 +1468,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- Project 1 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
+            <div data-aos="zoom-in" class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[9px] font-mono tracking-wider text-violet-400 font-bold uppercase bg-[#7C3AED]/10 border border-[#7C3AED]/15 px-2.5 py-1 rounded">Web3 / DeFi</span>
@@ -1438,7 +1483,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-[#22D3EE]/35">
+            <div data-aos="zoom-in" class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-[#22D3EE]/35">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Crypto Community</span>
@@ -1453,7 +1498,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
+            <div data-aos="zoom-in" class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Airdrop hub</span>
@@ -1468,7 +1513,7 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
+            <div data-aos="zoom-in" class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-violet-500/35">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[9px] font-mono tracking-wider text-violet-400 font-bold uppercase bg-[#7C3AED]/10 border border-[#7C3AED]/15 px-2.5 py-1 rounded">Telegram Support</span>
@@ -1483,7 +1528,7 @@
             </div>
 
             <!-- Project 5 -->
-            <div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
+            <div data-aos="zoom-in" class="glass-card p-6 rounded-2xl flex flex-col justify-between h-full group bg-midnight/5 border border-zinc-800/60 hover:border-cyan-500/35">
               <div class="flex flex-col gap-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[9px] font-mono tracking-wider text-cyan-400 font-bold uppercase bg-cyan-600/10 border border-cyan-500/15 px-2.5 py-1 rounded">Drafting Portfolio</span>
@@ -1519,7 +1564,7 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10 reveal-on-scroll">
           
           <div class="max-w-3xl mb-12">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
+            <h2 data-aos="fade-up" class="font-display font-bold text-3xl md:text-4xl text-white mb-2">
               My Career <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-300">Direction</span>
             </h2>
             <p class="text-sm text-cyan-400 font-mono tracking-widest uppercase font-bold">
@@ -1528,7 +1573,7 @@
           </div>
 
           <!-- Highlight card -->
-          <div class="glass-card p-8 sm:p-10 rounded-2xl border border-cyan-500/15 bg-midnight/60 shadow-glow-cyan max-w-4xl relative overflow-hidden">
+          <div data-aos="fade-up" class="glass-card p-8 sm:p-10 rounded-2xl border border-cyan-500/15 bg-midnight/60 shadow-glow-cyan max-w-4xl relative overflow-hidden">
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               
@@ -1566,7 +1611,7 @@
             <!-- Left Info Block -->
             <div class="lg:col-span-5 flex flex-col gap-6">
               <div class="max-w-xl">
-                <h2 class="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">
+                <h2 data-aos="fade-up" class="font-display font-extrabold text-3xl md:text-4xl text-white mb-4">
                   Let’s <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 font-bold">Work Together.</span>
                 </h2>
                 <p class="text-sm text-[#94a3b8] leading-relaxed max-w-md">
@@ -1578,7 +1623,7 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-4">
                 
                 <!-- Telegram -->
-                <a href="https://t.me/web3ishtiak" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-cyan-400/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://t.me/web3ishtiak" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-cyan-400/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-cyan-400 group-hover:border-cyan-400/40 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                   </div>
@@ -1589,7 +1634,7 @@
                 </a>
 
                 <!-- Twitter (X) -->
-                <a href="https://x.com/_coreishtiak" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-white/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://x.com/_coreishtiak" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-white/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-white group-hover:border-white/30 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M4 4l11.73 16h4.27L8.27 4H4z M4 20l6.768-6.768M13.228 10.768L20 4"></path></svg>
                   </div>
@@ -1600,7 +1645,7 @@
                 </a>
 
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/ishtiak-ahamed-?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-cyan-400/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://www.linkedin.com/in/ishtiak-ahamed-?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-cyan-400/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-cyan-400 group-hover:border-cyan-400/40 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                   </div>
@@ -1611,7 +1656,7 @@
                 </a>
 
                 <!-- GitHub -->
-                <a href="https://github.com/Ishtiakahamed" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-white/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://github.com/Ishtiakahamed" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-white/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-white group-hover:border-white/30 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
                   </div>
@@ -1622,7 +1667,7 @@
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://www.facebook.com/share/1ZeMdEan5W/" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-blue-500/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://www.facebook.com/share/1ZeMdEan5W/" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-blue-500/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-blue-500 group-hover:border-blue-500/40 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                   </div>
@@ -1633,7 +1678,7 @@
                 </a>
 
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/_ishtiakahamed?igsh=ajQ3bWViNzM0Z3g2" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-pink-500/20 hover:bg-white/[0.02] transition-all">
+                <a data-aos="fade-up" href="https://www.instagram.com/_ishtiakahamed?igsh=ajQ3bWViNzM0Z3g2" target="_blank" class="flex items-center gap-3 group w-full p-2.5 rounded-xl border border-white/5 hover:border-pink-500/20 hover:bg-white/[0.02] transition-all">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-pink-500 group-hover:border-pink-500/40 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </div>
@@ -1644,7 +1689,7 @@
                 </a>
 
                 <!-- Email -->
-                <a href="mailto:ishtiakahamed2008@gmail.com" class="flex items-center gap-3 group p-2.5 rounded-xl border border-white/5 hover:border-pink-500/20 hover:bg-white/[0.02] transition-all w-full">
+                <a data-aos="fade-up" href="mailto:ishtiakahamed2008@gmail.com" class="flex items-center gap-3 group p-2.5 rounded-xl border border-white/5 hover:border-pink-500/20 hover:bg-white/[0.02] transition-all w-full">
                   <div class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center bg-white/5 text-lightGray group-hover:text-pink-400 group-hover:border-pink-400/30 transition-all shadow-md shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   </div>
@@ -1660,7 +1705,7 @@
 
             <!-- Right: Input form layout -->
             <div class="lg:col-span-7 w-full">
-              <div class="glass-card p-7 sm:p-9 rounded-2xl relative bg-midnight/30">
+              <div data-aos="fade-up" class="glass-card p-7 sm:p-9 rounded-2xl relative bg-midnight/30">
                 
                 <!-- 
                   GITHUB PAGES FORM NOTE: 
@@ -1753,10 +1798,22 @@
       </div>
     </footer>
 
+    <!-- Animation Libraries CDNs -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <!-- INTERACTIVE LOGIC SCRIPT -->
     <script>
       // Initialize Lucide Icons
       lucide.createIcons();
+
+      // Initialize AOS Animate On Scroll Engine
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 80,
+        disable: 'mobile' // Disable on small/slow mobile browsers if requested, or keep it responsive. The prompt says: "keep typing effect fast and responsive, use data-aos attributes on layout components..." Let's keep it responsive since AOS is lightweight and performance has been optimized!
+      });
 
       // Read reduced-motion state globally
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2185,57 +2242,24 @@
         "Civil Engineering Learning"
       ];
       
-      let phraseIdx = 0;
-      let charIdx = rotatingPhrases[phraseIdx].length;
-      let isDeleting = false;
-      const typingSpeed = 65; // Speed for typing in ms
-      let rotationTimeout = null;
-
-      function runTypewriterRotation() {
-        if (!rotatingTextElement) return;
-        const currentFullPhrase = rotatingPhrases[phraseIdx];
-        
+      if (rotatingTextElement) {
         if (prefersReducedMotion) {
           if (typingCursorElement) {
             typingCursorElement.style.display = 'none';
           }
-          rotatingTextElement.textContent = currentFullPhrase;
-          phraseIdx = (phraseIdx + 1) % rotatingPhrases.length;
-          rotationTimeout = setTimeout(runTypewriterRotation, 2500);
-          return;
-        }
-
-        if (!isDeleting) {
-          // Incrementally type the text
-          rotatingTextElement.textContent = currentFullPhrase.substring(0, charIdx + 1);
-          charIdx++;
-
-          if (charIdx === currentFullPhrase.length) {
-            // Pause at the fully typed phrase for exactly 2.5 seconds
-            isDeleting = true;
-            rotationTimeout = setTimeout(runTypewriterRotation, 2500);
-          } else {
-            rotationTimeout = setTimeout(runTypewriterRotation, typingSpeed);
-          }
+          rotatingTextElement.textContent = rotatingPhrases[0];
         } else {
-          // Incrementally backspace the text
-          rotatingTextElement.textContent = currentFullPhrase.substring(0, charIdx - 1);
-          charIdx--;
-
-          if (charIdx === 0) {
-            isDeleting = false;
-            phraseIdx = (phraseIdx + 1) % rotatingPhrases.length;
-            // Short dwell pause before typing the next phrase
-            rotationTimeout = setTimeout(runTypewriterRotation, 400);
-          } else {
-            rotationTimeout = setTimeout(runTypewriterRotation, typingSpeed * 0.5); // Delete faster for dynamic feel
-          }
+          rotatingTextElement.textContent = '';
+          new Typed('#rotating-text', {
+            strings: rotatingPhrases,
+            typeSpeed: 60,
+            backSpeed: 30,
+            backDelay: 2500,
+            startDelay: 1200,
+            loop: true,
+            showCursor: false // Using our beautiful custom blinking cursor element
+          });
         }
-      }
-
-      if (rotatingTextElement) {
-        // Start typing loop after the introductory load delays fade out
-        setTimeout(runTypewriterRotation, 1200);
       }
     </script>
   </body>
